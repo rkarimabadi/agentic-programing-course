@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>واژه‌نامهٔ دوره</title>
+<link href="assets/fonts.css" rel="stylesheet" />
+<link href="assets/base.css" rel="stylesheet" />
+<style>
+  .search-wrap { position: sticky; top: 0; z-index: 20; background: var(--bg);
+    padding: 14px 0 12px; border-bottom: 1px solid var(--border); margin-bottom: 10px; }
+  #q { width: 100%; font-family: var(--sans); font-size: 17px; padding: 12px 16px;
+    border: 1px solid var(--border); border-radius: var(--radius); background: #fff;
+    color: var(--text); }
+  #q:focus { outline: none; border-color: var(--green); }
+  #hits { margin-top: 8px; font-size: var(--fs-tiny); color: var(--gray); min-height: 1.2em; }
+  tr.tl td:first-child b::after { content: "نویسه‌گردانی"; display: inline-block;
+    margin-inline-start: 8px; font-size: 10.5px; font-weight: 700; vertical-align: middle;
+    color: var(--green-dark); background: var(--green-soft); border-radius: 999px;
+    padding: 2px 8px; white-space: nowrap; }
+  .count { font-size: var(--fs-tiny); font-weight: 400; color: var(--gray); }
+  .jump { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0 4px; }
+  .jump a { font-size: var(--fs-tiny); font-weight: 600; text-decoration: none;
+    border: 1px solid var(--border); border-radius: 999px; padding: 5px 14px;
+    color: var(--text-soft); background: var(--bg-soft); }
+  .jump a:hover { border-color: var(--green); color: var(--green-dark); }
+  @media print { .search-wrap, .jump { display: none; } }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <span>واژه‌نامهٔ دوره</span>
+  <span class="crumbs"><a href="index.html">صفحهٔ دوره</a></span>
+</div>
+
+<header class="doc-head">
+  <div class="doc-head-inner">
+    <span class="doc-kicker">مرجع · همهٔ جلسه‌ها</span>
+    <h1 class="doc-title">واژه‌نامهٔ دوره</h1>
+    <p class="doc-subtitle">هر اصطلاح فارسی به‌همراه معادل انگلیسی‌اش، تا بتوانید متن را به منبع اصلی گره بزنید</p>
+    <div class="doc-meta">
+      <span><b>159</b> اصطلاح</span>
+      <span>24 نویسه‌گردانی‌شده</span>
+      <span>56 واژهٔ فارسیِ فنی</span>
+      <span>79 مفهوم دوره</span>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<div class="search-wrap">
+  <input id="q" type="search" placeholder="جست‌وجو به فارسی یا انگلیسی… (مثلاً: intent یا قصد)" autocomplete="off" />
+  <div id="hits"></div>
+</div>
+
+<div class="box note">
+  <span class="box-title">این واژه‌نامه سه بخش دارد</span>
+  <strong>۱. واژگان نویسه‌گردانی‌شده</strong> — اصطلاحاتی که توسعه‌دهندگان فارسی‌زبان عملاً به‌شکل وام‌واژه
+  به کار می‌برند. معادل ساختگی برایشان نساخته‌ایم.
+  <br /><br />
+  <strong>۲. واژگان فارسیِ دارای معنای فنی</strong> — واژه‌هایی که در فارسی روزمره عادی به‌نظر می‌رسند اما
+  در این مبحث اصطلاح تخصصی‌اند. «قصد» یعنی <span class="en">intent</span>، «ابزار» یعنی
+  <span class="en">tool</span>، «مهار» یعنی <span class="en">harness</span>. اگر معادل انگلیسی را ندانید،
+  نمی‌توانید متن را به منبع اصلی وصل کنید — و همین بخش برای همان ساخته شده است.
+  <br /><br />
+  <strong>۳. مفاهیم ویژهٔ دوره</strong> — اصطلاحاتی که مقالات مرجع ابداع کرده‌اند، به‌تفکیک جلسه.
+</div>
+
+<h2 id="translit">۱. واژگان نویسه‌گردانی‌شده</h2>
+
+<div class="table-wrap">
+<table>
+  <thead><tr><th style="width:215px">اصطلاح</th><th style="width:175px">معادل انگلیسی</th><th>توضیح</th></tr></thead>
+  <tbody>
+    <tr class="tl"><td><b>پرامپت</b></td><td class="en">prompt</td><td>متنی که به مدل داده می‌شود. پیش‌تر «درخواست» بود که با request اشتباه می‌شد.</td></tr>
+    <tr class="tl"><td><b>کانتکست ویندو</b></td><td class="en">context window</td><td>بیشینهٔ توکنی که مدل در یک نوبت می‌تواند ببیند.</td></tr>
+    <tr class="tl"><td><b>تست</b></td><td class="en">test</td><td>وارسی قطعی رفتار کد. «یونیت تست» = آزمون واحد.</td></tr>
+    <tr class="tl"><td><b>سندباکس</b></td><td class="en">sandbox</td><td>محیط اجرای ایزوله و کم‌امتیاز برای مهار شعاع انفجاری.</td></tr>
+    <tr class="tl"><td><b>کانتینر</b></td><td class="en">container</td><td>واحد بسته‌بندی و اجرای ایزولهٔ نرم‌افزار.</td></tr>
+    <tr class="tl"><td><b>دیپلوی</b></td><td class="en">deploy / deployment</td><td>انتشار کد روی محیط اجرا.</td></tr>
+    <tr class="tl"><td><b>رانتایم</b></td><td class="en">runtime</td><td>محیطی که عامل یا برنامه در آن اجرا می‌شود.</td></tr>
+    <tr class="tl"><td><b>ریپو</b></td><td class="en">repository</td><td>مخزن کد تحت کنترل نسخه.</td></tr>
+    <tr class="tl"><td><b>پول‌ریکوئست</b></td><td class="en">pull request / PR</td><td>درخواست ادغام تغییرها در شاخهٔ اصلی.</td></tr>
+    <tr class="tl"><td><b>کامیت</b></td><td class="en">commit</td><td>ثبت یک تغییر در تاریخچهٔ گیت.</td></tr>
+    <tr class="tl"><td><b>دیباگ</b></td><td class="en">debug</td><td>یافتن و رفع علت ریشه‌ای خطا.</td></tr>
+    <tr class="tl"><td><b>لینتر</b></td><td class="en">linter</td><td>ابزار وارسی خودکار سبک و خطاهای ایستا.</td></tr>
+    <tr class="tl"><td><b>ریفکتور</b></td><td class="en">refactor</td><td>بازسازی ساختار کد بدون تغییر رفتار.</td></tr>
+    <tr class="tl"><td><b>گاردریل</b></td><td class="en">guardrail</td><td>قید بیرونی که کنش‌های مجاز عامل را محدود می‌کند.</td></tr>
+    <tr class="tl"><td><b>بنچمارک</b></td><td class="en">benchmark</td><td>مجموعه‌کار استاندارد برای مقایسهٔ عملکرد.</td></tr>
+    <tr class="tl"><td><b>اسکیما</b></td><td class="en">schema</td><td>ساختار تعریف‌شدهٔ داده یا ورودی ابزار.</td></tr>
+    <tr class="tl"><td><b>امبدینگ</b></td><td class="en">embedding</td><td>بازنمایی برداری متن برای جست‌وجوی معنایی.</td></tr>
+    <tr class="tl"><td><b>فاین‌تیون</b></td><td class="en">fine-tuning</td><td>آموزش تکمیلی مدل روی دادهٔ اختصاصی.</td></tr>
+    <tr class="tl"><td><b>رول‌بک</b></td><td class="en">rollback</td><td>بازگرداندن سامانه به وضعیت سالم پیشین.</td></tr>
+    <tr class="tl"><td><b>کش</b></td><td class="en">cache</td><td>حافظهٔ نهان برای پرهیز از محاسبهٔ دوباره.</td></tr>
+    <tr class="tl"><td><b>پیلود</b></td><td class="en">payload</td><td>بار دادهٔ ارسالی در یک درخواست یا حمله.</td></tr>
+    <tr class="tl"><td><b>مارکت‌پلیس</b></td><td class="en">marketplace</td><td>بازارگاه عرضهٔ عامل‌ها یا مهارت‌ها.</td></tr>
+    <tr class="tl"><td><b>سی‌آی / سی‌دی</b></td><td class="en">CI / CD</td><td>یکپارچه‌سازی و استقرار پیوسته.</td></tr>
+    <tr class="tl"><td><b>تله‌متری</b></td><td class="en">telemetry</td><td>دادهٔ خودکارِ گزارش، رد و سنجه که از سامانه بیرون می‌آید.</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h2 id="domain">۲. واژگان فارسیِ دارای معنای فنی</h2>
+
+<p>
+این واژه‌ها فارسی می‌مانند، چون معادل‌هایشان جاافتاده‌اند. اما در متن‌های دوره نقش
+<strong>اصطلاح</strong> بازی می‌کنند، نه واژهٔ عادی — و در اولین کاربردشان در هر سند،
+معادل انگلیسی در کنارشان می‌آید.
+</p>
+
+<div class="table-wrap">
+<table>
+  <thead><tr><th style="width:215px">اصطلاح</th><th style="width:175px">معادل انگلیسی</th><th>معنای فنی در این مبحث</th></tr></thead>
+  <tbody>
+    <tr><td><b>قصد / نیت</b></td><td class="en">intent</td><td>خواستهٔ واقعی کاربر، در برابر آنچه لفظاً گفته. ریشهٔ «انحراف قصد» و «رضایت قصد».</td></tr>
+    <tr><td><b>مهار</b></td><td class="en">harness</td><td>هرچه پیرامون مدل قرار می‌گیرد: پرامپت، ابزار، سندباکس، ارکستراسیون، قلاب. عامل = مدل + مهار.</td></tr>
+    <tr><td><b>ابزار</b></td><td class="en">tool</td><td>تابعی که عامل می‌تواند فرا بخواند تا در جهان بیرون کنش کند.</td></tr>
+    <tr><td><b>فراخوان ابزار</b></td><td class="en">tool call</td><td>یک نوبت مشخص از به‌کارگیری ابزار، با آرگومان‌ها و نتیجه‌اش.</td></tr>
+    <tr><td><b>مسیر</b></td><td class="en">trajectory</td><td>توالی گام‌های استدلال و فراخوان ابزار که عامل تا رسیدن به پاسخ طی می‌کند.</td></tr>
+    <tr><td><b>زمینه</b></td><td class="en">context</td><td>اطلاعاتی که عامل در لحظه در اختیار دارد. پایهٔ «مهندسی زمینه» و «پوسیدگی زمینه».</td></tr>
+    <tr><td><b>عامل</b></td><td class="en">agent</td><td>مدل به‌علاوهٔ مهار؛ توان استدلال، به‌کارگیری ابزار و اجرای کار.</td></tr>
+    <tr><td><b>زیرعامل</b></td><td class="en">subagent</td><td>عاملی که عامل دیگری برای کاری مشخص فرا می‌خواند.</td></tr>
+    <tr><td><b>مهارت</b></td><td class="en">skill</td><td>پوشهٔ دانش رویه‌ای که عامل فقط هنگام نیاز بار می‌کند.</td></tr>
+    <tr><td><b>حافظه</b></td><td class="en">memory</td><td>آنچه عامل میان نوبت‌ها یا نشست‌ها نگه می‌دارد.</td></tr>
+    <tr><td><b>دستور</b></td><td class="en">instruction</td><td>قاعده‌ای که رفتار عامل را شکل می‌دهد، در برابر داده‌ای که پردازش می‌کند.</td></tr>
+    <tr><td><b>مشخصات</b></td><td class="en">spec</td><td>سند قصد و رفتار مورد انتظار؛ منبع حقیقت برای عامل و انسان.</td></tr>
+    <tr><td><b>نوبت</b></td><td class="en">turn</td><td>یک رفت‌وبرگشت در گفت‌وگو با مدل.</td></tr>
+    <tr><td><b>نشست</b></td><td class="en">session</td><td>کل یک گفت‌وگوی چندنوبتی، از آغاز تا پایان کار.</td></tr>
+    <tr><td><b>خودگردان</b></td><td class="en">autonomous</td><td>توان اجرای کار بدون تأیید انسانی در هر گام.</td></tr>
+    <tr><td><b>اختیار</b></td><td class="en">authority</td><td>دامنهٔ کاری که عامل مجاز به انجامش است. ریشهٔ «اختیار محیطی صفر».</td></tr>
+    <tr><td><b>دامنه‌بندی</b></td><td class="en">scoping</td><td>محدودکردن دسترسی به حداقل لازم برای یک کار مشخص.</td></tr>
+    <tr><td><b>کمترین امتیاز</b></td><td class="en">least privilege</td><td>اصل دادن کمترین دسترسی ممکن به هر هویت.</td></tr>
+    <tr><td><b>زودگذر</b></td><td class="en">ephemeral</td><td>کوتاه‌عمر و دورریختنی؛ پس از کار بازنشانی می‌شود.</td></tr>
+    <tr><td><b>قید</b></td><td class="en">constraint</td><td>محدودیت سختی که فضای کنش عامل را کوچک می‌کند.</td></tr>
+    <tr><td><b>مرز</b></td><td class="en">boundary</td><td>خط جدایی میان دو ناحیهٔ اعتماد یا مسئولیت.</td></tr>
+    <tr><td><b>سیاست</b></td><td class="en">policy</td><td>قاعدهٔ حکمرانی که بیرون از مدل تعریف و اعمال می‌شود.</td></tr>
+    <tr><td><b>دروازه</b></td><td class="en">gate / gating</td><td>نقطهٔ وارسی که اجرا را تا برآورده‌شدن شرطی متوقف می‌کند.</td></tr>
+    <tr><td><b>رهگیری</b></td><td class="en">interception</td><td>گرفتن یک کنش پیش از رسیدنش به سامانهٔ بیرونی.</td></tr>
+    <tr><td><b>اعتبارنامه</b></td><td class="en">credential</td><td>کلید یا توکنی که هویت را اثبات می‌کند.</td></tr>
+    <tr><td><b>هویت</b></td><td class="en">identity</td><td>اینکه چه کسی یا چه عاملی دارد کنش می‌کند.</td></tr>
+    <tr><td><b>تفویض</b></td><td class="en">delegation</td><td>واگذاری اختیار از یک هویت به هویتی دیگر.</td></tr>
+    <tr><td><b>نشت</b></td><td class="en">leak</td><td>خروج ناخواستهٔ اطلاعات حساس از مرز سامانه.</td></tr>
+    <tr><td><b>پاک‌سازی</b></td><td class="en">sanitization</td><td>بی‌اثرکردن ورودی یا خروجی خطرناک پیش از استفاده.</td></tr>
+    <tr><td><b>پوشاندن</b></td><td class="en">masking / redaction</td><td>جایگزینی دادهٔ حساس با جانشین عمومی.</td></tr>
+    <tr><td><b>ارزیابی</b></td><td class="en">evaluation / eval</td><td>سنجش رفتار غیرقطعی با نمره و باند تحمل، در برابر ادعای دوتایی تست.</td></tr>
+    <tr><td><b>سنجه</b></td><td class="en">rubric / metric</td><td>معیاری که بر پایه‌اش به خروجی نمره داده می‌شود.</td></tr>
+    <tr><td><b>داور</b></td><td class="en">judge</td><td>مدلی که خروجی مدل دیگر را در برابر سنجه نمره می‌دهد.</td></tr>
+    <tr><td><b>مبنا</b></td><td class="en">baseline</td><td>وضعیت مرجع که بهبود یا پس‌رفت نسبت به آن سنجیده می‌شود.</td></tr>
+    <tr><td><b>پس‌رفت</b></td><td class="en">regression</td><td>شکستن چیزی که پیش‌تر کار می‌کرد.</td></tr>
+    <tr><td><b>انحراف</b></td><td class="en">drift</td><td>دورشدن تدریجی رفتار از آنچه انتظار می‌رفت.</td></tr>
+    <tr><td><b>پوشش</b></td><td class="en">coverage</td><td>سهمی از رفتار که آزمون یا ارزیابی واقعاً می‌سنجد.</td></tr>
+    <tr><td><b>محرک</b></td><td class="en">trigger</td><td>نشانه‌ای در درخواست کاربر که باعث فعال‌شدن یک مهارت می‌شود.</td></tr>
+    <tr><td><b>رد اجرا</b></td><td class="en">trace</td><td>ثبت زمان‌ترتیبی گام‌های استدلال و فراخوان ابزار.</td></tr>
+    <tr><td><b>رصدپذیری</b></td><td class="en">observability</td><td>توان دیدن آنچه درون سامانه رخ می‌دهد.</td></tr>
+    <tr><td><b>بازیابی</b></td><td class="en">retrieval</td><td>آوردن دانش بیرونی به زمینه در لحظهٔ نیاز.</td></tr>
+    <tr><td><b>تجزیه</b></td><td class="en">decomposition</td><td>شکستن کاری بزرگ به زیرکارهای اتمی.</td></tr>
+    <tr><td><b>ارکستراسیون</b></td><td class="en">orchestration</td><td>هماهنگ‌کردن چند عامل یا چند گام اجرا.</td></tr>
+    <tr><td><b>واگذاری</b></td><td class="en">handoff</td><td>سپردن کار از عاملی به عامل دیگر.</td></tr>
+    <tr><td><b>قلاب</b></td><td class="en">hook</td><td>کد قطعی که در نقطهٔ مشخصی از چرخهٔ عمر اجرا می‌شود.</td></tr>
+    <tr><td><b>حلقه</b></td><td class="en">loop</td><td>چرخهٔ ادراک ← برنامه ← کنش ← مشاهده که عامل در آن می‌چرخد.</td></tr>
+    <tr><td><b>بودجهٔ توکن</b></td><td class="en">token budget</td><td>سقف عملی توکنی که می‌توان در زمینهٔ فعال خرج کرد.</td></tr>
+    <tr><td><b>تنزل</b></td><td class="en">degradation</td><td>افت تدریجی کیفیت، اغلب بی‌آنکه خطایی صادر شود.</td></tr>
+    <tr><td><b>گردش‌کار</b></td><td class="en">workflow</td><td>توالی گام‌های یک کار تکرارشونده.</td></tr>
+    <tr><td><b>مسیریابی</b></td><td class="en">routing</td><td>انتخاب اینکه کدام مهارت یا عامل کار را بردارد.</td></tr>
+    <tr><td><b>وابستگی</b></td><td class="en">dependency</td><td>کتابخانهٔ بیرونی که پروژه به آن تکیه دارد.</td></tr>
+    <tr><td><b>حالت مرزی</b></td><td class="en">edge case</td><td>ورودی یا شرایط نامتعارف که منطق را می‌شکند.</td></tr>
+    <tr><td><b>توهم</b></td><td class="en">hallucination</td><td>تولید بااطمینانِ محتوای نادرست به‌دست مدل.</td></tr>
+    <tr><td><b>تأخیر</b></td><td class="en">latency</td><td>زمان سپری‌شده تا دریافت پاسخ.</td></tr>
+    <tr><td><b>توکن</b></td><td class="en">token</td><td>واحد شکسته‌شدهٔ متن که مدل پردازش می‌کند.</td></tr>
+    <tr><td><b>قطعی / غیرقطعی</b></td><td class="en">deterministic / non-deterministic</td><td>قطعی یعنی ورودی یکسان همیشه خروجی یکسان می‌دهد؛ مدل‌ها غیرقطعی‌اند.</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h2 id="concepts">۳. مفاهیم ویژهٔ دوره</h2>
+
+<div class="jump">
+  <a href="#s1">جلسهٔ ۱</a><a href="#s2">جلسهٔ ۲</a><a href="#s3">جلسهٔ ۳</a>
+  <a href="#s4">جلسهٔ ۴</a><a href="#s5">جلسهٔ ۵</a>
+</div>
+
+  <h3 id="s1">جلسهٔ 1 — چرخهٔ جدید تولید نرم‌افزار <span class="count">10 اصطلاح</span></h3>
+  <div class="table-wrap">
+  <table>
+    <thead><tr><th style="width:215px">اصطلاح</th><th style="width:175px">معادل انگلیسی</th><th>تعریف کوتاه</th></tr></thead>
+    <tbody>
+      <tr><td><b>کدنویسی شهودی</b></td><td class="en">Vibe coding</td><td>توصیف خواسته به زبان طبیعی، پذیرفتن خروجی مدل و بازگرداندن پیام خطا به مدل تا وقتی کار کند؛ بدون راستی‌آزمایی نظام‌مند.</td></tr>
+      <tr><td><b>مهندسی عامل‌محور</b></td><td class="en">Agentic engineering</td><td>همان قدرت مولد، اما درون سامانه‌ای از مشخصات، تست‌ها، ارزیابی‌ها و گاردریل‌ها با نظارت انسانی بر معماری.</td></tr>
+      <tr><td><b>مهندسی زمینه</b></td><td class="en">Context engineering</td><td>طراحی آگاهانهٔ اطلاعاتی که عامل در اختیار دارد: دستورها، دانش، حافظه، مثال‌ها، ابزارها و گاردریل‌ها.</td></tr>
+      <tr><td><b>زمینهٔ ایستا / پویا</b></td><td class="en">Static / Dynamic context</td><td>ایستا همیشه بارگذاری می‌شود (هویت عامل)؛ پویا فقط هنگام نیاز فراخوانی می‌شود (مهارت، نتیجهٔ ابزار، بازیابی سند).</td></tr>
+      <tr><td><b>مهار</b></td><td class="en">Harness</td><td>هرچه پیرامون مدل قرار می‌گیرد: دستورها، ابزارها، سندباکس، ارکستراسیون، قلاب‌ها و رصدپذیری. عامل = مدل + مهار</td></tr>
+      <tr><td><b>مدل کارخانه</b></td><td class="en">Factory model</td><td>خروجی اصلی توسعه‌دهنده دیگر کد نیست؛ سامانه‌ای است که کد تولید می‌کند.</td></tr>
+      <tr><td><b>رهبر ارکستر</b></td><td class="en">Conductor</td><td>کار هم‌زمان و دستی با عامل در ویرایشگر؛ کنترل ریزدانه روی هر تغییر.</td></tr>
+      <tr><td><b>هماهنگ‌کننده</b></td><td class="en">Orchestrator</td><td>واگذاری ناهم‌زمان کار به چند عامل و بازبینی نتیجه؛ کار در سطح انتزاع بالاتر.</td></tr>
+      <tr><td><b>مسئلهٔ ۸۰ درصد</b></td><td class="en">The 80% problem</td><td>عامل ۸۰٪ کد را سریع می‌سازد؛ ۲۰٪ باقی‌مانده (حالت‌های مرزی، یکپارچگی، درستی ظریف) دانش زمینه‌ای عمیق می‌خواهد.</td></tr>
+      <tr><td><b>تست در برابر ارزیابی</b></td><td class="en">Tests vs. Evals</td><td>تست بخش قطعی را می‌سنجد؛ ارزیابی بخش غیرقطعی را: مسیر طی‌شده، انتخاب ابزار و کیفیت پاسخ نهایی.</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <h3 id="s2">جلسهٔ 2 — ابزارهای عامل و تعامل‌پذیری <span class="count">14 اصطلاح</span></h3>
+  <div class="table-wrap">
+  <table>
+    <thead><tr><th style="width:215px">اصطلاح</th><th style="width:175px">معادل انگلیسی</th><th>تعریف کوتاه</th></tr></thead>
+    <tbody>
+      <tr><td><b>پروتکل زمینهٔ مدل</b></td><td class="en">MCP</td><td>سوکت استاندارد میان مدل و ابزارها؛ جایگزین پوشش‌های اختصاصی REST برای هر اتصال.</td></tr>
+      <tr><td><b>مسئلهٔ N×M</b></td><td class="en">NxM problem</td><td>اتصال N مدل به M ابزار به‌شکل سنتی، N×M نقطهٔ یکپارچگی می‌خواهد؛ با پروتکل، N+M.</td></tr>
+      <tr><td><b>حامل</b></td><td class="en">Transport</td><td>مسیر انتقال پیام‌های JSON-RPC: stdio برای محلی و SSE روی HTTP برای راه دور.</td></tr>
+      <tr><td><b>بازرس MCP</b></td><td class="en">MCP Inspector</td><td>ابزار توسعه‌دهنده برای پرس‌وجوی دستی سرور، دیدن اسکیمای ابزارها و بازرسی بسته‌های خام.</td></tr>
+      <tr><td><b>عامل یکپارچه</b></td><td class="en">Single-agent monolith</td><td>یک عامل با ده‌ها ابزار و یک دستور سامانهٔ غول‌آسا؛ سریع ساخته می‌شود، اما به سقف مقیاس می‌خورد.</td></tr>
+      <tr><td><b>رقیق‌شدن توجه</b></td><td class="en">Attention dilution</td><td>هرچه ابزارهای یک عامل بیشتر شود، فضای جست‌وجوی کنش بعدی بزرگ‌تر و تصمیم‌گیری بدتر می‌شود.</td></tr>
+      <tr><td><b>تخصص‌گرایی داخلی</b></td><td class="en">Internal specialization</td><td>افراز منطقی یک عامل یکپارچه به زیرعامل‌های هدفمند، بدون عبور از مرز شبکه.</td></tr>
+      <tr><td><b>عامل‌به‌عامل</b></td><td class="en">A2A</td><td>پروتکل ارتباط میان عامل‌های مستقل؛ زبان مشترکی که از چارچوب، زبان برنامه‌نویسی و ساختار بار بی‌نیاز می‌کند.</td></tr>
+      <tr><td><b>دامنهٔ کران‌دار / بی‌کران</b></td><td class="en">Bounded / Unbounded</td><td>ابزار در دامنهٔ کران‌دار «بفرست و فراموش کن» کار می‌کند؛ عامل در دامنهٔ بی‌کران به گفت‌وگوی چندنوبتی نیاز دارد.</td></tr>
+      <tr><td><b>کارت عامل</b></td><td class="en">Agent Card</td><td>«رزومهٔ» ماشین‌خوان عامل: توانایی‌ها، سیاست‌های امنیتی و اسکیمای تعامل.</td></tr>
+      <tr><td><b>فهرست ثبت</b></td><td class="en">Registry</td><td>جایی که عامل‌ها به سرویس‌های کشف‌شدنی بدل می‌شوند؛ عمومی (مارکت‌پلیس) یا خصوصی (سازمانی).</td></tr>
+      <tr><td><b>رابط کاربری مولد</b></td><td class="en">Generative UI</td><td>ساخت پویای رابط کاربری در رانتایم بر پایهٔ قصد کاربر، به‌جای کدنویسی همهٔ حالت‌های ممکن.</td></tr>
+      <tr><td><b>کاتالوگ</b></td><td class="en">Catalog</td><td>مجموعهٔ مؤلفه‌های مورد اعتمادی که عامل فقط می‌تواند از میان آن‌ها درخواست کند؛ ستون امنیت A2UI.</td></tr>
+      <tr><td><b>مجوزنامه</b></td><td class="en">Mandate</td><td>قاعدهٔ امضاشدهٔ کاربر که سقف و شرایط خرج‌کردن عامل را تعیین می‌کند.</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <h3 id="s3">جلسهٔ 3 — مهارت‌های عامل <span class="count">15 اصطلاح</span></h3>
+  <div class="table-wrap">
+  <table>
+    <thead><tr><th style="width:215px">اصطلاح</th><th style="width:175px">معادل انگلیسی</th><th>تعریف کوتاه</th></tr></thead>
+    <tbody>
+      <tr><td><b>مهارت عامل</b></td><td class="en">Agent Skill</td><td>پوشه‌ای شامل SKILL.md و به‌اختیار scripts/، references/ و assets/ که دانش رویه‌ای را حمل می‌کند.</td></tr>
+      <tr><td><b>افشای تدریجی</b></td><td class="en">Progressive disclosure</td><td>بارگذاری سه‌سطحی: فراداده همیشه، بدنه هنگام فعال‌شدن، منابع همراه فقط در صورت نیاز.</td></tr>
+      <tr><td><b>حافظهٔ رویه‌ای</b></td><td class="en">Procedural memory</td><td>به‌خاطرسپردن «چگونه انجام دادن»؛ در برابر حافظهٔ رویدادی (چه گذشت) و معنایی (چه می‌دانیم).</td></tr>
+      <tr><td><b>پوسیدگی زمینه</b></td><td class="en">Context rot</td><td>افت کیفیت مدل با بزرگ‌شدن ورودی، حتی وقتی دشواری کار ثابت است.</td></tr>
+      <tr><td><b>گم‌شدن در میانه</b></td><td class="en">Lost in the middle</td><td>عملکرد وقتی بهترین است که اطلاعات مرتبط ابتدا یا انتهای ورودی باشد و در میانه افت می‌کند.</td></tr>
+      <tr><td><b>شکست محرک</b></td><td class="en">Trigger failure</td><td>مهارت نادرست فعال می‌شود یا مهارت درست اصلاً فعال نمی‌شود.</td></tr>
+      <tr><td><b>توسعهٔ ارزیابی‌محور</b></td><td class="en">EDD</td><td>نوشتن پرونده‌های ارزیابی پیش از نوشتن مهارت، تا مشخصات کارکردی از ابتدا روشن شود.</td></tr>
+      <tr><td><b>مسیر ابزار</b></td><td class="en">Tool trajectory</td><td>توالی فراخوان‌های ابزار؛ آنچه عامل «انجام داد»، در برابر آنچه «گفت».</td></tr>
+      <tr><td><b>داور مدل‌زبانی</b></td><td class="en">LLM-as-Judge</td><td>مدلی هم‌رده که خروجی را در مقیاس با سنجهٔ مشخص نمره می‌دهد.</td></tr>
+      <tr><td><b>سنجهٔ pass^k</b></td><td class="en">pass^k</td><td>موفقیت در همهٔ k اجرا؛ معیار پایداری، نه شانس.</td></tr>
+      <tr><td><b>نردبان اختیار</b></td><td class="en">Read / Draft / Act</td><td>سه سطح مجوز مهارت: فقط‌خواندنی، فقط‌پیش‌نویس، مجاز به کنش.</td></tr>
+      <tr><td><b>فرامهارت</b></td><td class="en">Meta-skill</td><td>مهارتی که کارش نوشتن، ارزیابی یا بهبود مهارت‌های دیگر است.</td></tr>
+      <tr><td><b>بدهی زمینه</b></td><td class="en">Context debt</td><td>انباشت دستورهای تأکیدی و پرحجم در توصیف‌ها که مدل یاد می‌گیرد نادیده‌شان بگیرد.</td></tr>
+      <tr><td><b>انتقال هوش به چپ</b></td><td class="en">Shifting intelligence left</td><td>بیرون‌کشیدن منطق از درخواست مدل و گذاشتن آن در اسکریپت‌های قطعی و تست‌پذیر.</td></tr>
+      <tr><td><b>نمایهٔ توانمندی</b></td><td class="en">Capability profile</td><td>بستهٔ قابل‌تعویض از مهارت‌ها، ابزارها، دستورها و پارامترهای مدل، متناسب با یک وضعیت اجرایی.</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <h3 id="s4">جلسهٔ 4 — امنیت و ارزیابی <span class="count">21 اصطلاح</span></h3>
+  <div class="table-wrap">
+  <table>
+    <thead><tr><th style="width:215px">اصطلاح</th><th style="width:175px">معادل انگلیسی</th><th>تعریف کوتاه</th></tr></thead>
+    <tbody>
+      <tr><td><b>اعتماد مؤثر</b></td><td class="en">Effective Trust</td><td>سنجهٔ پیوسته‌ای که در زنجیرهٔ تأمین، هویت، رفتار رانتایم و پیوندهای زمینه‌ای عامل ارزیابی می‌شود.</td></tr>
+      <tr><td><b>زمینه به‌مثابه محیط</b></td><td class="en">Context-as-a-Perimeter</td><td>جایگزین مدل «هویت به‌مثابه محیط»؛ مجوز بر پایهٔ زمینهٔ رانتایم تعیین می‌شود نه صرفاً نقش ایستا.</td></tr>
+      <tr><td><b>سندباکس زودگذر</b></td><td class="en">Ephemeral sandbox</td><td>محیط ایزولهٔ سطح هسته که میان اجراها وضعیتش کاملاً بازنشانی می‌شود.</td></tr>
+      <tr><td><b>بستهٔ توهمی</b></td><td class="en">Hallucinated package</td><td>نام بسته‌ای که مدل می‌سازد و وجود ندارد؛ مهاجم همان نام را با بدافزار منتشر می‌کند.</td></tr>
+      <tr><td><b>سوءاستفاده از نام توهمی</b></td><td class="en">Slopsquatting</td><td>حملهٔ زنجیرهٔ تأمین مبتنی بر انتشار بدافزار با نام‌های ساختگیِ محتمل.</td></tr>
+      <tr><td><b>حکمرانی خروج شبکه</b></td><td class="en">Egress governance</td><td>کنترل ترافیک خروجی عامل؛ دسترسی غیرتعاملی و از راه کش یا پیش‌پالایش‌شده.</td></tr>
+      <tr><td><b>جعل سرور ابزار</b></td><td class="en">MCP spoofing</td><td>سروری جعلی که خود را ابزار مشروع جا می‌زند تا پیلود مخرب تزریق یا امتیاز بیش‌ازحد بگیرد.</td></tr>
+      <tr><td><b>معاون گیج</b></td><td class="en">Confused Deputy</td><td>عاملی با امتیاز بیش‌ازحد که فریب می‌خورد و فرمان غیرمجاز را به نیابت مهاجم اجرا می‌کند.</td></tr>
+      <tr><td><b>اختیار محیطی صفر</b></td><td class="en">Zero Ambient Authority</td><td>عامل هرگز امتیازهای گستردهٔ توسعه‌دهنده را به ارث نمی‌برد.</td></tr>
+      <tr><td><b>کاهش دامنهٔ به‌هنگام</b></td><td class="en">JIT downscoping</td><td>صدور توکن تازه و بسیار محدود برای همان کار مشخص، که دقیقاً با پایان کار منقضی می‌شود.</td></tr>
+      <tr><td><b>تفاوت‌نمای شهودی</b></td><td class="en">Vibe Diff</td><td>ترجمهٔ کد تولیدشده به خلاصه‌ای به زبان ساده، پیش از تأیید انسانی کنش پرمخاطره.</td></tr>
+      <tr><td><b>پیلود مخرب نامرئی</b></td><td class="en">Invisible payload</td><td>نویسه‌های با عرض صفر یا هم‌ریخت که در کد پنهان می‌شوند و از بازبینی انسانی می‌گریزند.</td></tr>
+      <tr><td><b>تحلیل رفتاری عامل</b></td><td class="en">ABA</td><td>مبناگیری مسیرهای اجرای مورد انتظار و تشخیص ناهنجاری‌های ویژهٔ عامل‌ها.</td></tr>
+      <tr><td><b>صورت‌ریز اجزای رانتایم</b></td><td class="en">AgBOM</td><td>سیاههٔ پویای ابزارها، مدل‌ها و منابع دادهٔ فعال عامل در هر لحظه.</td></tr>
+      <tr><td><b>قرنطینهٔ باحالت</b></td><td class="en">Stateful quarantine</td><td>سلب دسترسی ابزار بدون کشتن فرایند، تا حافظهٔ کوتاه‌مدت برای تحلیل قانونی سالم بماند.</td></tr>
+      <tr><td><b>مسیر شهودی</b></td><td class="en">Vibe Trajectory</td><td>نمای زمانی و یکپارچهٔ گام‌های شناختی عامل، از درخواست تا کنش واقعی.</td></tr>
+      <tr><td><b>انحراف قصد</b></td><td class="en">Intent Drift</td><td>دنبال‌کردن زیرهدف‌هایی که از قصد اولیهٔ انسان فاصله می‌گیرند.</td></tr>
+      <tr><td><b>زوال اعتماد</b></td><td class="en">Trust Decay</td><td>اصل کاهش‌پذیری اعتماد؛ اعتماد دارایی مستهلک‌شدنی است، نه وضعیت دائمی.</td></tr>
+      <tr><td><b>انکار کیف پول</b></td><td class="en">Denial of Wallet</td><td>حمله‌ای که با راه‌انداختن حلقه‌های بی‌پایان پرهزینه، صورت‌حساب سازمان را منفجر می‌کند.</td></tr>
+      <tr><td><b>شکاف کم‌مشخصگی</b></td><td class="en">Underspecification Gap</td><td>پرامپت زبان طبیعی کاربر ذاتاً ناقص است؛ کار اول ارزیابی، سنجش بازسازی درست مشخصات نانوشته است.</td></tr>
+      <tr><td><b>هم‌گرایی نشست</b></td><td class="en">Session convergence</td><td>سنجهٔ اصلی موفقیت: آیا کاربر به چیزی که می‌خواست رسید و در چند نوبت؟</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <h3 id="s5">جلسهٔ 5 — توسعهٔ مبتنی بر مشخصات <span class="count">19 اصطلاح</span></h3>
+  <div class="table-wrap">
+  <table>
+    <thead><tr><th style="width:215px">اصطلاح</th><th style="width:175px">معادل انگلیسی</th><th>تعریف کوتاه</th></tr></thead>
+    <tbody>
+      <tr><td><b>توسعهٔ مبتنی بر مشخصات</b></td><td class="en">SDD</td><td>نوشتن مشخصات دقیق به‌عنوان منبع حقیقت، پیش از تولید کد؛ کد از مشخصات بازتولیدشدنی است.</td></tr>
+      <tr><td><b>توهم سرعت</b></td><td class="en">Illusion of Speed</td><td>تولید سریع کد، سرعت انتشار نیست؛ گلوگاه فقط جابه‌جا شده است.</td></tr>
+      <tr><td><b>کد دورریختنی</b></td><td class="en">Disposable code</td><td>وقتی مشخصات محکم باشد، کل کدپایه بارها بازتولید می‌شود؛ پس دلبستگی عاطفی به کد معنا ندارد.</td></tr>
+      <tr><td><b>ستارهٔ شمالی معماری</b></td><td class="en">Architectural North Star</td><td>نقش مشخصات خوب: جلوگیری از پاره‌پاره‌شدن زمینه و بازی «تلفن».</td></tr>
+      <tr><td><b>پاره‌پاره‌شدن زمینه</b></td><td class="en">Context fragmentation</td><td>وقتی عامل به عکس‌های قدیمی فایل‌ها نگاه می‌کند و رشتهٔ ماجرا را گم می‌کند.</td></tr>
+      <tr><td><b>توسعهٔ رفتارمحور</b></td><td class="en">BDD</td><td>توصیف رفتار سامانه از دید کاربر، پیش از نوشتن کد، با زبان طبیعیِ ساختارمند.</td></tr>
+      <tr><td><b>الگوی گرکین</b></td><td class="en">Gherkin</td><td>قالب «سناریو / با فرض / وقتی / آنگاه» که مدل را وادار می‌کند به موقعیت ← کنش ← نتیجه فکر کند.</td></tr>
+      <tr><td><b>مالیات قالب</b></td><td class="en">Format tax</td><td>هزینهٔ استدلالی که قالب نامناسب ورودی تحمیل می‌کند.</td></tr>
+      <tr><td><b>حالت بی‌محابا</b></td><td class="en">YOLO mode</td><td>حالت تأیید خودکار؛ عامل سریع‌تر از فکر انسان عمل می‌کند.</td></tr>
+      <tr><td><b>عامل یاغی</b></td><td class="en">Rogue agent</td><td>وقتی به مدل «حس‌وحال» بدهی به‌جای «نقشه»، حدس می‌زند — و در نرم‌افزار سازمانی، حدس یعنی حادثه.</td></tr>
+      <tr><td><b>گره‌خوردگی بازبینی</b></td><td class="en">Review gridlock</td><td>پول‌ریکوئست غول‌آسا که به زنجیره‌ای از زیردرخواست‌های وابسته تبدیل می‌شود.</td></tr>
+      <tr><td><b>تأیید مشروط</b></td><td class="en">Conditional LGTM</td><td>تأیید بازبین مشروط به سبزشدن همهٔ تست‌های خودکار؛ سپس ادغام خودکار.</td></tr>
+      <tr><td><b>خستگی تأیید</b></td><td class="en">Approval fatigue</td><td>کلیک بازتابی روی «تأیید» زیر سیل تأییدهای خرد؛ شکلی از فرسودگی کم‌شدت.</td></tr>
+      <tr><td><b>توسعهٔ اعتماد صفر</b></td><td class="en">Zero-Trust Development</td><td>شبکهٔ ایمنی چندلایه: سندباکس، انسان در حلقه، پوشش تست، ارزیابی، سرور سیاست.</td></tr>
+      <tr><td><b>سرور سیاست</b></td><td class="en">Policy Server</td><td>حکمرانی بیرونی و دست‌نیافتنی که کنش‌ها را پیش از رسیدن به سامانه‌های بیرونی رهگیری می‌کند.</td></tr>
+      <tr><td><b>دروازهٔ ساختاری</b></td><td class="en">Structural gating</td><td>قواعد قطعی بر پایهٔ نقش و محیط؛ وارسی‌های سریع و دوتایی.</td></tr>
+      <tr><td><b>دروازهٔ معنایی</b></td><td class="en">Semantic gating</td><td>مدلی تخصصی که قصد و محتوای کنش پیشنهادی را در برابر سیاست‌های زبان طبیعی می‌سنجد.</td></tr>
+      <tr><td><b>توهم زمینه</b></td><td class="en">Context hallucination</td><td>وقتی عامل داده ندارد، شکاف را با هر رشته‌ای که در زمینه‌اش هست پر می‌کند — از جمله اطلاعات حساس.</td></tr>
+      <tr><td><b>بهداشت زمینه</b></td><td class="en">Context hygiene</td><td>پوشاندن اطلاعات هویتی و تزریق جانشین، تا عامل روی دادهٔ استریل‌شده کار کند.</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+</main>
+
+<footer class="doc-foot">
+  دورهٔ مهندسی عامل‌محور و کدنویسی شهودی — واژه‌نامهٔ دوره
+</footer>
+
+<script>
+(function () {
+  var q = document.getElementById('q');
+  var hits = document.getElementById('hits');
+  var rows = Array.prototype.slice.call(document.querySelectorAll('tbody tr'));
+  rows.forEach(function (r) { r.dataset.hay = r.textContent.toLowerCase(); });
+
+  function run() {
+    var v = q.value.trim().toLowerCase();
+    var n = 0;
+    rows.forEach(function (r) {
+      var show = !v || r.dataset.hay.indexOf(v) !== -1;
+      r.hidden = !show;
+      if (show) n++;
+    });
+    Array.prototype.forEach.call(document.querySelectorAll('.table-wrap'), function (wrap) {
+      var any = Array.prototype.some.call(wrap.querySelectorAll('tbody tr'),
+        function (r) { return !r.hidden; });
+      wrap.hidden = !any;
+      var head = wrap.previousElementSibling;
+      if (head && head.tagName === 'H3') head.hidden = !any;
+    });
+    hits.textContent = v ? n + ' اصطلاح یافت شد' : '';
+  }
+
+  q.addEventListener('input', run);
+})();
+</script>
+
+</body>
+</html>

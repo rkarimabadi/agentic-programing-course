@@ -12,6 +12,7 @@
 <div class="topbar">
   <span>دورهٔ مهندسی عامل‌محور — جلسهٔ دوم</span>
   <span class="crumbs">
+    <a href="../glossary.html">واژه‌نامه</a>
     <a href="../index.html">صفحهٔ دوره</a>
     <a href="slides.html">اسلایدها</a>
     <a href="handout.html">جزوه</a>
@@ -52,21 +53,21 @@
 <h2 id="about">۱. معرفی جلسه</h2>
 
 <p>
-در جلسهٔ اول دیدیم که خروجی اصلی توسعه‌دهنده، سامانه‌ای است که کد تولید می‌کند، و «مهار» همهٔ چیزی است که مدل را
+در جلسهٔ اول دیدیم که خروجی اصلی توسعه‌دهنده، سامانه‌ای است که کد تولید می‌کند، و «مهار <span class="gl">(harness)</span>» همهٔ چیزی است که مدل را
 احاطه می‌کند. جلسهٔ دوم دربارهٔ <strong>استانداردهای صنعتی</strong> همان کارخانه است: پیچ‌ومهره‌ها، قالب‌های داده و
 کانال‌های ارتباطی که به ماشین‌آلات شما اجازه می‌دهند با بقیهٔ جهان ایمن تعامل کنند.
 </p>
 
 <p>
 بدون این پروتکل‌های باز، هر عاملی که می‌سازید یک «ماشین سفارشی» منزوی در گاراژ است و ساعت‌ها و توکن‌هایتان
-صرف نوشتن پوشش‌های شکنندهٔ اختصاصی برای هر ابزار و هر <span class="en">API</span> می‌شود — دقیقاً همان چیزی که
-شما را در نقش کم‌بازدهِ «رهبر ارکستر» حبس می‌کند.
+صرف نوشتن پوشش‌های <span class="gl">(coverage)</span> شکنندهٔ اختصاصی برای هر ابزار <span class="gl">(tool)</span> و هر <span class="en">API</span> می‌شود — دقیقاً همان چیزی که
+شما را در نقش کم‌بازدهِ «رهبر ارکستر <span class="gl">(Conductor)</span>» حبس می‌کند.
 </p>
 
 <div class="box note">
   <span class="box-title">استعارهٔ راهنمای جلسه</span>
   <strong><span class="en">MCP</span></strong> پریز <span class="en">USB-C</span> داخل مهار است؛
-  <strong><span class="en">A2A</span></strong> بی‌سیم کارخانه که متخصص‌ها با آن مذاکره و واگذاری می‌کنند؛
+  <strong><span class="en">A2A</span></strong> بی‌سیم کارخانه که متخصص‌ها با آن مذاکره و واگذاری <span class="gl">(handoff)</span> می‌کنند؛
   <strong><span class="en">A2UI</span></strong> ویترین مولدی که خروجی خام را به رابط تعاملی امن بدل می‌کند؛
   و <strong><span class="en">AP2</span></strong> و <strong><span class="en">UCP</span></strong> شبکهٔ زنجیرهٔ تأمین و تراکنش جهانی.
 </div>
@@ -78,15 +79,15 @@
   <thead><tr><th style="width:52px">#</th><th>هدف یادگیری</th><th style="width:130px">سطح شناختی</th></tr></thead>
   <tbody>
     <tr><td>۱</td><td>مسئلهٔ <span class="en">N×M</span> را با عدد توضیح دهد و نشان دهد <span class="en">MCP</span> چگونه پیچیدگی را از ضربی به جمعی تبدیل می‌کند.</td><td>فهم و تحلیل</td></tr>
-    <tr><td>۲</td><td>سه گام ورود یک سرور <span class="en">MCP</span> (کشف، پیکربندی، اتصال) را روی یک عامل واقعی اجرا کند.</td><td>کاربرد</td></tr>
-    <tr><td>۳</td><td>تفاوت حامل‌های <span class="en">stdio</span> و <span class="en">SSE</span> را بگوید و برای یک سناریو حامل درست را انتخاب کند.</td><td>تحلیل</td></tr>
-    <tr><td>۴</td><td>هنگام خطای عامل، به‌جای دست‌کاری کورکورانهٔ دستور سامانه، لایهٔ انتقال را با <span class="en">MCP Inspector</span> اشکال‌زدایی کند.</td><td>کاربرد</td></tr>
-    <tr><td>۵</td><td>فهرست بایدها و نبایدهای مصرف <span class="en">MCP</span> را به‌کار ببندد، به‌ویژه در مورد اعتبارنامه‌ها و محیط تولید.</td><td>ارزشیابی</td></tr>
-    <tr><td>۶</td><td>سقف معماری «عامل یکپارچه» را تشخیص دهد و تخصص‌گرایی داخلی را به‌عنوان راه‌حل توضیح دهد.</td><td>تحلیل</td></tr>
-    <tr><td>۷</td><td>معیار تصمیم «ابزار یا عامل؟» را بر پایهٔ کران‌دار یا بی‌کران بودن دامنه به‌کار ببندد.</td><td>ارزشیابی</td></tr>
-    <tr><td>۸</td><td>ساختار «کارت عامل» را توضیح دهد و نقش فهرست‌های ثبت عمومی و خصوصی را در کشف عامل بیان کند.</td><td>دانش و فهم</td></tr>
-    <tr><td>۹</td><td>توضیح دهد چرا <span class="en">A2UI</span> امن است: عامل کد اجرایی تولید نمی‌کند، بلکه از کاتالوگ مورد اعتماد مؤلفه درخواست می‌کند.</td><td>تحلیل</td></tr>
-    <tr><td>۱۰</td><td>تقسیم کار <span class="en">UCP</span> و <span class="en">AP2</span> را در یک گردش خرید خودگردان شرح دهد و نقش «مجوزنامه» را بیان کند.</td><td>فهم و کاربرد</td></tr>
+    <tr><td>۲</td><td>سه گام ورود یک سرور <span class="en">MCP</span> (کشف، پیکربندی، اتصال) را روی یک عامل <span class="gl">(agent)</span> واقعی اجرا کند.</td><td>کاربرد</td></tr>
+    <tr><td>۳</td><td>تفاوت حامل‌های <span class="gl">(Transport)</span> <span class="en">stdio</span> و <span class="en">SSE</span> را بگوید و برای یک سناریو حامل درست را انتخاب کند.</td><td>تحلیل</td></tr>
+    <tr><td>۴</td><td>هنگام خطای عامل، به‌جای دست‌کاری کورکورانهٔ دستور <span class="gl">(instruction)</span> سامانه، لایهٔ انتقال را با <span class="en">MCP Inspector</span> دیباگ <span class="gl">(debug)</span> کند.</td><td>کاربرد</td></tr>
+    <tr><td>۵</td><td>فهرست بایدها و نبایدهای مصرف <span class="en">MCP</span> را به‌کار ببندد، به‌ویژه در مورد اعتبارنامه‌ها <span class="gl">(credential)</span> و محیط تولید.</td><td>ارزشیابی</td></tr>
+    <tr><td>۶</td><td>سقف معماری «عامل یکپارچه <span class="gl">(Single-agent monolith)</span>» را تشخیص دهد و تخصص‌گرایی داخلی <span class="gl">(Internal specialization)</span> را به‌عنوان راه‌حل توضیح دهد.</td><td>تحلیل</td></tr>
+    <tr><td>۷</td><td>معیار تصمیم «ابزار یا عامل؟» را بر پایهٔ کران‌دار یا بی‌کران <span class="gl">(Bounded)</span> بودن دامنه به‌کار ببندد.</td><td>ارزشیابی</td></tr>
+    <tr><td>۸</td><td>ساختار «کارت عامل <span class="gl">(Agent Card)</span>» را توضیح دهد و نقش فهرست‌های ثبت عمومی و خصوصی را در کشف عامل بیان کند.</td><td>دانش و فهم</td></tr>
+    <tr><td>۹</td><td>توضیح دهد چرا <span class="en">A2UI</span> امن است: عامل کد اجرایی تولید نمی‌کند، بلکه از کاتالوگ <span class="gl">(Catalog)</span> مورد اعتماد مؤلفه درخواست می‌کند.</td><td>تحلیل</td></tr>
+    <tr><td>۱۰</td><td>تقسیم کار <span class="en">UCP</span> و <span class="en">AP2</span> را در یک گردش خرید خودگردان <span class="gl">(autonomous)</span> شرح دهد و نقش «مجوزنامه <span class="gl">(Mandate)</span>» را بیان کند.</td><td>فهم و کاربرد</td></tr>
   </tbody>
 </table>
 </div>
@@ -95,7 +96,7 @@
 
 <h3>دانش پیش‌نیاز</h3>
 <ul>
-  <li>مطالب جلسهٔ اول، به‌ویژه مفهوم مهار و طیف کدنویسی شهودی تا مهندسی عامل‌محور.</li>
+  <li>مطالب جلسهٔ اول، به‌ویژه مفهوم مهار و طیف کدنویسی شهودی <span class="gl">(Vibe coding)</span> تا مهندسی عامل‌محور <span class="gl">(Agentic engineering)</span>.</li>
   <li>آشنایی با <span class="en">JSON</span>، متغیرهای محیطی و مفهوم <span class="en">API</span>.</li>
   <li>تجربهٔ کار با خط فرمان.</li>
 </ul>
@@ -109,7 +110,7 @@
 
 <div class="box warn">
   <span class="box-title">هشدار امنیتی پیش از کارگاه</span>
-  در تمرین‌های این جلسه هیچ‌کس نباید کلید واقعی <span class="en">API</span>، توکن سازمانی یا اعتبارنامهٔ محیط تولید
+  در تمرین‌های این جلسه هیچ‌کس نباید کلید واقعی <span class="en">API</span>، توکن <span class="gl">(token)</span> سازمانی یا اعتبارنامهٔ محیط تولید
   وارد کند. همهٔ تمرین‌ها با داده و پروژهٔ آزمایشی انجام می‌شوند. این قاعده را در دقیقهٔ اول جلسه اعلام کنید.
 </div>
 
@@ -119,18 +120,18 @@
 <table>
   <thead><tr><th style="width:190px">اصطلاح</th><th style="width:160px">معادل انگلیسی</th><th>تعریف کوتاه</th></tr></thead>
   <tbody>
-    <tr><td>پروتکل زمینهٔ مدل</td><td><span class="en">MCP</span></td><td>سوکت استاندارد میان مدل و ابزارها؛ جایگزین پوشش‌های اختصاصی <span class="en">REST</span> برای هر اتصال.</td></tr>
+    <tr><td>پروتکل زمینهٔ مدل <span class="gl">(MCP)</span></td><td><span class="en">MCP</span></td><td>سوکت استاندارد میان مدل و ابزارها؛ جایگزین پوشش‌های اختصاصی <span class="en">REST</span> برای هر اتصال.</td></tr>
     <tr><td>مسئلهٔ <span class="en">N×M</span></td><td><span class="en">NxM problem</span></td><td>اتصال <span class="en">N</span> مدل به <span class="en">M</span> ابزار به‌شکل سنتی، <span class="en">N×M</span> نقطهٔ یکپارچگی می‌خواهد؛ با پروتکل، <span class="en">N+M</span>.</td></tr>
-    <tr><td>حامل</td><td><span class="en">Transport</span></td><td>مسیر انتقال پیام‌های <span class="en">JSON-RPC</span>: <span class="en">stdio</span> برای محلی و <span class="en">SSE</span> روی <span class="en">HTTP</span> برای راه دور.</td></tr>
-    <tr><td>بازرس <span class="en">MCP</span></td><td><span class="en">MCP Inspector</span></td><td>ابزار توسعه‌دهنده برای پرس‌وجوی دستی سرور، دیدن طرح‌وارهٔ ابزارها و بازرسی بسته‌های خام.</td></tr>
+    <tr><td>حامل</td><td><span class="en">Transport</span></td><td>مسیر <span class="gl">(trajectory)</span> انتقال پیام‌های <span class="en">JSON-RPC</span>: <span class="en">stdio</span> برای محلی و <span class="en">SSE</span> روی <span class="en">HTTP</span> برای راه دور.</td></tr>
+    <tr><td>بازرس <span class="en">MCP</span></td><td><span class="en">MCP Inspector</span></td><td>ابزار توسعه‌دهنده برای پرس‌وجوی دستی سرور، دیدن اسکیمای ابزارها و بازرسی بسته‌های خام.</td></tr>
     <tr><td>عامل یکپارچه</td><td><span class="en">Single-agent monolith</span></td><td>یک عامل با ده‌ها ابزار و یک دستور سامانهٔ غول‌آسا؛ سریع ساخته می‌شود، اما به سقف مقیاس می‌خورد.</td></tr>
-    <tr><td>رقیق‌شدن توجه</td><td><span class="en">Attention dilution</span></td><td>هرچه ابزارهای یک عامل بیشتر شود، فضای جست‌وجوی کنش بعدی بزرگ‌تر و تصمیم‌گیری بدتر می‌شود.</td></tr>
-    <tr><td>تخصص‌گرایی داخلی</td><td><span class="en">Internal specialization</span></td><td>افراز منطقی یک عامل یکپارچه به زیرعامل‌های هدفمند، بدون عبور از مرز شبکه.</td></tr>
-    <tr><td>عامل‌به‌عامل</td><td><span class="en">A2A</span></td><td>پروتکل ارتباط میان عامل‌های مستقل؛ زبان مشترکی که از چارچوب، زبان برنامه‌نویسی و ساختار بار بی‌نیاز می‌کند.</td></tr>
-    <tr><td>دامنهٔ کران‌دار / بی‌کران</td><td><span class="en">Bounded / Unbounded</span></td><td>ابزار در دامنهٔ کران‌دار «بفرست و فراموش کن» کار می‌کند؛ عامل در دامنهٔ بی‌کران به گفت‌وگوی چندنوبتی نیاز دارد.</td></tr>
-    <tr><td>کارت عامل</td><td><span class="en">Agent Card</span></td><td>«رزومهٔ» ماشین‌خوان عامل: توانایی‌ها، سیاست‌های امنیتی و طرح‌وارهٔ تعامل.</td></tr>
-    <tr><td>فهرست ثبت</td><td><span class="en">Registry</span></td><td>جایی که عامل‌ها به سرویس‌های کشف‌شدنی بدل می‌شوند؛ عمومی (بازارگاه) یا خصوصی (سازمانی).</td></tr>
-    <tr><td>رابط کاربری مولد</td><td><span class="en">Generative UI</span></td><td>ساخت پویای رابط کاربری در زمان اجرا بر پایهٔ قصد کاربر، به‌جای کدنویسی همهٔ حالت‌های ممکن.</td></tr>
+    <tr><td>رقیق‌شدن توجه <span class="gl">(Attention dilution)</span></td><td><span class="en">Attention dilution</span></td><td>هرچه ابزارهای یک عامل بیشتر شود، فضای جست‌وجوی کنش بعدی بزرگ‌تر و تصمیم‌گیری بدتر می‌شود.</td></tr>
+    <tr><td>تخصص‌گرایی داخلی</td><td><span class="en">Internal specialization</span></td><td>افراز منطقی یک عامل یکپارچه به زیرعامل‌های <span class="gl">(subagent)</span> هدفمند، بدون عبور از مرز <span class="gl">(boundary)</span> شبکه.</td></tr>
+    <tr><td>عامل‌به‌عامل <span class="gl">(A2A)</span></td><td><span class="en">A2A</span></td><td>پروتکل ارتباط میان عامل‌های مستقل؛ زبان مشترکی که از چارچوب، زبان برنامه‌نویسی و ساختار بار بی‌نیاز می‌کند.</td></tr>
+    <tr><td>دامنهٔ کران‌دار <span class="gl">(Bounded)</span> / بی‌کران</td><td><span class="en">Bounded / Unbounded</span></td><td>ابزار در دامنهٔ کران‌دار «بفرست و فراموش کن» کار می‌کند؛ عامل در دامنهٔ بی‌کران به گفت‌وگوی چندنوبتی نیاز دارد.</td></tr>
+    <tr><td>کارت عامل</td><td><span class="en">Agent Card</span></td><td>«رزومهٔ» ماشین‌خوان عامل: توانایی‌ها، سیاست‌های <span class="gl">(policy)</span> امنیتی و اسکیمای تعامل.</td></tr>
+    <tr><td>فهرست ثبت <span class="gl">(Registry)</span></td><td><span class="en">Registry</span></td><td>جایی که عامل‌ها به سرویس‌های کشف‌شدنی بدل می‌شوند؛ عمومی (مارکت‌پلیس <span class="gl">(marketplace)</span>) یا خصوصی (سازمانی).</td></tr>
+    <tr><td>رابط کاربری مولد <span class="gl">(Generative UI)</span></td><td><span class="en">Generative UI</span></td><td>ساخت پویای رابط کاربری در رانتایم <span class="gl">(runtime)</span> بر پایهٔ قصد <span class="gl">(intent)</span> کاربر، به‌جای کدنویسی همهٔ حالت‌های ممکن.</td></tr>
     <tr><td>کاتالوگ</td><td><span class="en">Catalog</span></td><td>مجموعهٔ مؤلفه‌های مورد اعتمادی که عامل فقط می‌تواند از میان آن‌ها درخواست کند؛ ستون امنیت <span class="en">A2UI</span>.</td></tr>
     <tr><td>مجوزنامه</td><td><span class="en">Mandate</span></td><td>قاعدهٔ امضاشدهٔ کاربر که سقف و شرایط خرج‌کردن عامل را تعیین می‌کند.</td></tr>
   </tbody>
@@ -167,7 +168,7 @@
 
   <div class="tl-item">
     <span class="tl-time">01:15 – 01:35</span>
-    <p class="tl-title">اشکال‌زدایی و جعبه‌ابزار مصرف امن</p>
+    <p class="tl-title">دیباگ و جعبه‌ابزار مصرف امن</p>
     <p class="tl-body">حامل‌ها، <span class="en">MCP Inspector</span>، و فهرست بایدها و نبایدها با تمرکز بر امنیت و اعتبارنامه‌ها. <span class="slide-ref">اسلاید ۱۵–۱۹</span></p>
   </div>
 
@@ -209,8 +210,8 @@
 <ol>
   <li><strong>کشف:</strong> یک سرور <span class="en">MCP</span> رسمی یا شناخته‌شده برای فایل‌سیستم یا جست‌وجو انتخاب کنید.</li>
   <li><strong>پیکربندی:</strong> دامنهٔ دسترسی را به یک پوشهٔ آزمایشی محدود کنید و اعتبارنامه‌ها را از راه متغیر محیطی بدهید، نه در متن درخواست.</li>
-  <li><strong>اتصال:</strong> دست‌دادن را تأیید کنید، فهرست ابزارها را بگیرید و طرح‌وارهٔ خروجی را بررسی کنید.</li>
-  <li><strong>آزمون:</strong> یک کار واقعی به عامل بدهید که ناچار شود از این ابزار استفاده کند و مسیر فراخوان را دنبال کنید.</li>
+  <li><strong>اتصال:</strong> دست‌دادن را تأیید کنید، فهرست ابزارها را بگیرید و اسکیمای خروجی را بررسی کنید.</li>
+  <li><strong>تست <span class="gl">(test)</span>:</strong> یک کار واقعی به عامل بدهید که ناچار شود از این ابزار استفاده کند و مسیر فراخوان را دنبال کنید.</li>
 </ol>
 
 <div class="box key">
@@ -219,7 +220,7 @@
   دامنهٔ دسترسی محدود است (تلاش برای خواندن بیرون از پوشهٔ مجاز باید شکست بخورد).
 </div>
 
-<h3>کارگاه ۲ — اشکال‌زدایی یک فراخوان خراب (۱۰ دقیقه، گروه دونفره)</h3>
+<h3>کارگاه ۲ — دیباگ یک فراخوان خراب (۱۰ دقیقه، گروه دونفره)</h3>
 <p>
 مدرس عمداً یک پیکربندی معیوب می‌دهد (نام ابزار نادرست یا پارامتر اجباری جاافتاده).
 گروه‌ها باید <strong>بدون تغییردادن دستور سامانه</strong> و فقط با بازرسی لایهٔ انتقال، علت را پیدا کنند.
@@ -231,7 +232,7 @@
 <ul>
   <li><strong>توانایی‌ها:</strong> دقیقاً چه کارهایی را انجام می‌دهد و چه کارهایی را انجام نمی‌دهد.</li>
   <li><strong>امنیت و انطباق:</strong> با چه داده‌هایی کار می‌کند، چه مجوزهایی لازم دارد، چه چیزی را ذخیره نمی‌کند.</li>
-  <li><strong>طرح‌وارهٔ تعامل:</strong> ورودی مورد انتظار، خروجی، و رفتار در حالت ابهام (کجا سؤال می‌پرسد).</li>
+  <li><strong>اسکیمای تعامل:</strong> ورودی مورد انتظار، خروجی، و رفتار در حالت ابهام (کجا سؤال می‌پرسد).</li>
 </ul>
 
 <h3>تمرین کلاسی — ابزار یا عامل؟ (۱۰ دقیقه)</h3>
@@ -248,7 +249,7 @@
   <thead><tr><th style="width:190px">مؤلفه</th><th style="width:70px">سهم</th><th>شرح و معیار نمره‌دهی</th></tr></thead>
   <tbody>
     <tr><td>گزارش اتصال <span class="en">MCP</span></td><td>۳۵٪</td><td>مستندسازی سه گام کشف، پیکربندی و اتصال برای یک سرور واقعی، همراه با تصویر فهرست ابزارها و شرح محدودسازی دسترسی.</td></tr>
-    <tr><td>گزارش اشکال‌زدایی</td><td>۲۰٪</td><td>شرح یک خطای واقعی فراخوان ابزار و نحوهٔ ریشه‌یابی آن از راه لایهٔ انتقال، نه حدس‌زدن روی دستور سامانه.</td></tr>
+    <tr><td>گزارش دیباگ</td><td>۲۰٪</td><td>شرح یک خطای واقعی فراخوان ابزار <span class="gl">(tool call)</span> و نحوهٔ ریشه‌یابی آن از راه لایهٔ انتقال، نه حدس‌زدن روی دستور سامانه.</td></tr>
     <tr><td>کارت عامل</td><td>۲۵٪</td><td>کارت عاملِ کامل و واقع‌بینانه برای یک متخصص فرضی؛ صراحت مرزها و سیاست داده امتیاز اصلی را دارد.</td></tr>
     <tr><td>تحلیل معماری</td><td>۲۰٪</td><td>یک صفحه: در پروژهٔ خودتان کجا عامل یکپارچه به سقف می‌خورد و کدام بخش‌ها را به زیرعامل تخصصی می‌شکنید و چرا.</td></tr>
   </tbody>
@@ -271,7 +272,7 @@
 
 <h3>مطالعهٔ تکمیلی</h3>
 <ul>
-  <li>مشخصات رسمی <span class="en">Model Context Protocol</span> و مخزن <span class="en">MCP Inspector</span>.</li>
+  <li>مشخصات <span class="gl">(spec)</span> رسمی <span class="en">Model Context Protocol</span> و ریپو <span class="gl">(repository)</span> <span class="en">MCP Inspector</span>.</li>
   <li>مستندات پروتکل <span class="en">A2A</span> (اکنون زیر نظر بنیاد لینوکس) و بخش افزونه‌ها.</li>
   <li>پروژهٔ متن‌باز <span class="en">A2UI</span> و راهنمای کاتالوگ نسخهٔ <span class="en">v0.9</span>.</li>
   <li>مقالهٔ پیشین همین مجموعه: <span class="en">Agent Tools &amp; Interoperability with MCP</span> برای معماری سازمانی و حاکمیت امنیتی.</li>
@@ -279,8 +280,8 @@
 
 <div class="box note">
   <span class="box-title">پیش‌نمای جلسهٔ سوم</span>
-  در جلسهٔ بعد از «اتصال» به «دانش» می‌رویم: نشست‌ها، مهارت‌ها و حافظه — یعنی همان زمینهٔ پویایی که در جلسهٔ اول
-  فقط نامش را بردیم، این‌بار با جزئیات طراحی، ارزیابی و اقتصاد توکن.
+  در جلسهٔ بعد از «اتصال» به «دانش» می‌رویم: نشست‌ها، مهارت‌ها <span class="gl">(skill)</span> و حافظه <span class="gl">(memory)</span> — یعنی همان زمینهٔ پویایی که در جلسهٔ اول
+  فقط نامش را بردیم، این‌بار با جزئیات طراحی، ارزیابی <span class="gl">(evaluation)</span> و اقتصاد توکن.
 </div>
 
 </main>
