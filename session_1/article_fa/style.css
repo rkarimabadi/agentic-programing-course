@@ -1,0 +1,433 @@
+/* ═══════════════════════════════════════════════════════════════
+   SDLC جدید با کدگذاری Vibe — طراحی بر اساس PDF اصلی
+   Design system derived from Day_1_v3.pdf (Google Sans, #202124,
+   #00a250 accent, #f8f8f9 cover background, etc.)
+   ═══════════════════════════════════════════════════════════════ */
+
+:root {
+  /* Colors from the PDF */
+  --text: #202124;
+  --gray: #80868b;
+  --green: #00a250;
+  --green-dark: #188038;
+  --blue: #1967d2;
+  --pink: #b80672;
+  --bg: #ffffff;
+  --bg-soft: #f8f8f9;
+  --callout-bg: #e9f6fd;
+  --code-bg: #f0f3f4;
+  --border: #dadce0;
+  --table-head: #f1f3f4;
+  --table-border: #cfd3d5;
+
+  /* Typography scale — scaled up from PDF pt sizes for screen */
+  --fs-body: 17px;
+  --fs-small: 14px;
+  --fs-tiny: 13px;
+  --fs-h1: 40px;
+  --fs-h2: 27px;
+  --fs-h3: 22px;
+  --fs-h4: 19px;
+  --fs-quote: 33px;
+  --fs-caption: 14px;
+  --fs-cover: clamp(44px, 8vw, 72px);
+  --fs-cover-sub: clamp(21px, 3.4vw, 30px);
+
+  --measure: 680px;
+  --radius: 12px;
+  --mono: "Roboto Mono", "Cascadia Mono", "Consolas", monospace;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Vazirmatn", "Segoe UI", Tahoma, Arial, sans-serif;
+  font-size: var(--fs-body);
+  line-height: 1.85;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* ───────────────────────── Running header ───────────────────────── */
+.running-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px clamp(20px, 5vw, 48px);
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
+  font-size: var(--fs-tiny);
+  font-weight: 500;
+  color: var(--gray);
+}
+.running-header-toc {
+  color: var(--blue);
+  text-decoration: none;
+  font-size: var(--fs-tiny);
+  transition: color 0.15s ease;
+}
+.running-header-toc:hover { color: #0d47a1; }
+
+/* ───────────────────────── Cover ───────────────────────── */
+.cover {
+  position: relative;
+  min-height: 96vh;
+  background: var(--bg-soft);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border);
+}
+.cover-inner {
+  position: relative;
+  z-index: 2;
+  max-width: var(--measure);
+  margin-inline-start: clamp(24px, 7vw, 88px);
+  padding: 80px 0;
+}
+.cover-title {
+  font-size: var(--fs-cover);
+  font-weight: 900;
+  line-height: 1.22;
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+.cover-subtitle {
+  margin: 26px 0 0;
+  font-size: var(--fs-cover-sub);
+  font-weight: 300;
+  color: var(--gray);
+  line-height: 1.6;
+}
+.cover-authors {
+  margin: 30px 0 0;
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--gray);
+}
+.cover-art {
+  position: absolute;
+  inset-inline-start: auto;
+  inset-inline-end: clamp(-40px, 2vw, 10px);
+  bottom: -6px;
+  width: min(46vw, 520px);
+  opacity: 0.95;
+  pointer-events: none;
+}
+@media (max-width: 900px) {
+  .cover { align-items: flex-start; }
+  .cover-inner { padding-top: 90px; }
+  .cover-art { width: 60vw; opacity: 0.55; }
+}
+
+/* ───────────────────────── Acknowledgements ───────────────────────── */
+.ack {
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: clamp(48px, 9vh, 96px) clamp(24px, 5vw, 32px);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 40px;
+  align-items: start;
+}
+.ack h2 { margin-top: 0; }
+.ack-text p { margin: 8px 0; }
+.ack-label {
+  font-size: var(--fs-small);
+  font-weight: 700;
+  color: var(--gray);
+  margin: 26px 0 6px;
+}
+.ack-art {
+  width: clamp(160px, 26vw, 300px);
+  border-radius: var(--radius);
+}
+@media (max-width: 720px) { .ack { grid-template-columns: 1fr; } }
+
+/* ───────────────────────── Table of contents ───────────────────────── */
+.toc {
+  position: relative;
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: clamp(40px, 8vh, 80px) clamp(24px, 5vw, 32px) 120px;
+}
+.toc-title {
+  font-size: var(--fs-h2);
+  color: var(--gray);
+  font-weight: 700;
+  margin: 0 0 34px;
+}
+.toc-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  padding: 8px 2px;
+  text-decoration: none;
+  color: var(--text);
+  font-size: 16px;
+  border-bottom: 1px dotted #e3e5e7;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.toc-item:hover { background: var(--bg-soft); color: var(--blue); }
+.toc-item .toc-page { color: var(--gray); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.toc-item.lvl1 { font-weight: 700; font-size: 17px; }
+.toc-item.lvl2 { padding-inline-start: 24px; }
+.toc-item.lvl3 { padding-inline-start: 48px; font-size: 15px; color: #3c4043; }
+.toc-art {
+  position: absolute;
+  inset-inline-start: -30px;
+  bottom: 0;
+  height: 100%;
+  opacity: 0.2;
+  pointer-events: none;
+}
+@media (max-width: 720px) { .toc-art { display: none; } }
+
+/* ───────────────────────── Main content ───────────────────────── */
+.content {
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: 0 clamp(20px, 4vw, 24px) 40px;
+}
+
+.part {
+  padding: clamp(56px, 10vh, 110px) 0 clamp(24px, 4vh, 40px);
+  border-top: 1px solid var(--border);
+  scroll-margin-top: 70px;
+}
+.part:first-of-type { border-top: none; }
+
+/* Chapter opener (mirrors the 24pt Google Sans Bold openers) */
+.chapter-title {
+  font-size: var(--fs-h1);
+  font-weight: 900;
+  line-height: 1.35;
+  margin: 0 0 28px;
+  letter-spacing: -0.4px;
+}
+/* Regular section headings (16pt in PDF) */
+.section-title {
+  font-size: var(--fs-h2);
+  font-weight: 700;
+  line-height: 1.45;
+  margin: 48px 0 16px;
+  scroll-margin-top: 70px;
+}
+/* Sub-section headings (14pt in PDF) */
+.sub-title {
+  font-size: var(--fs-h3);
+  font-weight: 700;
+  line-height: 1.5;
+  margin: 36px 0 12px;
+  scroll-margin-top: 70px;
+}
+
+p { margin: 0 0 18px; }
+
+/* ───────────────────────── Pull quote (28pt + green bar) ───────────────────────── */
+.pull-quote {
+  margin: 0 0 44px;
+  padding: 6px 0 6px 0;
+  padding-inline-start: 30px;
+  border-inline-start: 6px solid var(--green);
+  font-size: var(--fs-quote);
+  font-weight: 300;
+  line-height: 1.55;
+  color: var(--gray);
+}
+
+/* ───────────────────────── Figures & captions ───────────────────────── */
+.figure {
+  margin: 44px 0;
+  text-align: center;
+}
+.figure img {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: #fff;
+}
+.figure figcaption {
+  margin-top: 12px;
+  font-size: var(--fs-caption);
+  font-weight: 500;
+  color: var(--text);
+}
+.figure-equation img {
+  max-width: min(420px, 90%);
+  border: none;
+}
+.table-figure { overflow-x: auto; }
+.table-figure table { min-width: 560px; }
+
+/* ───────────────────────── Spectrum table ───────────────────────── */
+.spectrum-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14.5px;
+  line-height: 1.7;
+  text-align: right;
+}
+.spectrum-table thead th {
+  background: var(--table-head);
+  font-weight: 700;
+  padding: 12px 14px;
+  border: 1px solid var(--table-border);
+}
+.spectrum-table tbody th {
+  background: var(--bg-soft);
+  font-weight: 700;
+  padding: 12px 14px;
+  border: 1px solid var(--table-border);
+  white-space: nowrap;
+  vertical-align: top;
+}
+.spectrum-table tbody td {
+  padding: 12px 14px;
+  border: 1px solid var(--table-border);
+  vertical-align: top;
+}
+.spectrum-table tbody tr:nth-child(even) td { background: #fafbfc; }
+.spectrum-table tbody tr:hover td { background: #f0f6ff; }
+
+/* ───────────────────────── Callout (Practical note) ───────────────────────── */
+.callout {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  margin: 44px 0;
+  padding: 22px 24px;
+  background: var(--callout-bg);
+  border-radius: var(--radius);
+}
+.callout-icon {
+  flex: 0 0 auto;
+  width: 44px;
+  height: 44px;
+  margin-top: 4px;
+  border-radius: 8px;
+}
+.callout-title {
+  font-weight: 700;
+  margin: 0 0 6px;
+}
+.callout p:last-child { margin-bottom: 0; }
+
+/* ───────────────────────── Code box (Snippet) ───────────────────────── */
+.code-box {
+  margin: 44px 0;
+  background: var(--code-bg);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+.code-box pre {
+  margin: 0;
+  padding: 22px 26px;
+  overflow-x: auto;
+  direction: ltr;
+  text-align: left;
+}
+.code-box code {
+  font-family: var(--mono);
+  font-size: 14px;
+  line-height: 1.9;
+  color: var(--text);
+  white-space: pre;
+}
+.code-box .c-comment { color: var(--pink); }
+.code-box .c-cmd { color: var(--text); }
+.code-box figcaption {
+  padding: 12px 26px 16px;
+  border-top: 1px solid var(--border);
+  font-size: var(--fs-caption);
+  font-weight: 500;
+  text-align: right;
+  background: #fff;
+}
+
+/* ───────────────────────── Inline code & footnotes ───────────────────────── */
+.inline-code {
+  font-family: var(--mono);
+  font-size: 0.85em;
+  color: var(--green-dark);
+  background: #f1f3f4;
+  border-radius: 5px;
+  padding: 1px 7px;
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+.fn {
+  font-size: 0.68em;
+  vertical-align: super;
+  color: var(--blue);
+  line-height: 0;
+}
+
+/* ───────────────────────── Lists ───────────────────────── */
+ul.plain-list, ul.agent-parts, ul.harness-list {
+  margin: 0 0 18px;
+  padding-inline-start: 26px;
+}
+ul.plain-list li, ul.agent-parts li, ul.harness-list li { margin-bottom: 10px; }
+.agent-parts li::marker { color: var(--green); }
+.harness-list li { margin-bottom: 12px; }
+
+ol.numbered-list {
+  margin: 0 0 18px;
+  padding-inline-start: 30px;
+}
+ol.numbered-list li { margin-bottom: 14px; }
+
+.harness-steps {
+  margin: 0 0 18px;
+  padding-inline-start: 30px;
+}
+.harness-steps > li { margin-bottom: 26px; }
+.harness-steps .sub-title { margin-top: 0; }
+
+/* ───────────────────────── Endnotes ───────────────────────── */
+.endnote-list {
+  margin: 0;
+  padding-inline-start: 28px;
+  font-size: var(--fs-small);
+  color: #3c4043;
+}
+.endnote-list li { margin-bottom: 12px; line-height: 1.8; }
+
+/* ───────────────────────── Footer ───────────────────────── */
+.page-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: 28px clamp(20px, 4vw, 24px) 48px;
+  border-top: 1px solid var(--border);
+  font-size: var(--fs-tiny);
+  color: var(--gray);
+  font-weight: 500;
+}
+
+/* ───────────────────────── Responsive ───────────────────────── */
+@media (max-width: 560px) {
+  :root {
+    --fs-h1: 32px;
+    --fs-h2: 23px;
+    --fs-h3: 20px;
+    --fs-quote: 25px;
+  }
+  .pull-quote { padding-inline-start: 20px; }
+  .cover-inner { margin-inline-start: 24px; }
+}

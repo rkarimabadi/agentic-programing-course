@@ -1,0 +1,16 @@
+# سیستم‌عامل
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# پایتون
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# فایل‌های موقت
+*.tmp
+*.bak
+*~
+*.html.bak

@@ -1,0 +1,124 @@
+/* ═══════════════════════════════════════════════════════════
+   افزودنی‌های ویژهٔ مقاله‌های ترجمه‌شده (در کنار base.css)
+   ═══════════════════════════════════════════════════════════ */
+
+.cover {
+  position: relative;
+  min-height: 78vh;
+  background: var(--bg-soft);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border);
+}
+.cover-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 660px;
+  margin-inline-start: clamp(20px, 7vw, 88px);
+  padding: 72px 0;
+}
+.cover-kicker {
+  display: inline-block;
+  font-size: var(--fs-tiny);
+  font-weight: 700;
+  color: var(--green-dark);
+  background: var(--green-soft);
+  border-radius: 999px;
+  padding: 5px 14px;
+  margin: 0 0 20px;
+}
+.cover-title {
+  font-size: clamp(38px, 7vw, 62px);
+  font-weight: 900;
+  line-height: 1.25;
+  margin: 0;
+  letter-spacing: -0.6px;
+}
+.cover-subtitle {
+  margin: 22px 0 0;
+  font-size: clamp(18px, 2.8vw, 25px);
+  font-weight: 300;
+  color: var(--gray);
+  line-height: 1.6;
+}
+.cover-authors {
+  margin: 30px 0 0;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text-soft);
+}
+.cover-meta {
+  margin: 10px 0 0;
+  font-size: var(--fs-tiny);
+  color: var(--gray);
+}
+.cover-art {
+  position: absolute;
+  inset-inline-end: 0;
+  top: 0;
+  height: 100%;
+  width: 42%;
+  object-fit: cover;
+  opacity: 0.95;
+  z-index: 1;
+}
+
+/* ───────────── نقل‌قول آغازین ───────────── */
+.epigraph {
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: clamp(36px, 6vw, 64px) clamp(18px, 5vw, 48px) 0;
+  font-size: clamp(22px, 3.2vw, 31px);
+  font-weight: 300;
+  line-height: 1.65;
+  color: var(--text);
+}
+
+/* ───────────── شکل‌ها ───────────── */
+figure {
+  margin: 30px 0;
+}
+figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: #fff;
+}
+figcaption {
+  margin-top: 10px;
+  font-size: var(--fs-tiny);
+  color: var(--gray);
+  line-height: 1.75;
+}
+figcaption b { color: var(--text-soft); }
+.fig-note {
+  display: block;
+  margin-top: 4px;
+  font-size: 12.5px;
+  color: #9aa1a8;
+}
+
+/* ───────────── شمارهٔ بخش ───────────── */
+h2 .sec-no {
+  font-family: var(--mono);
+  font-size: 0.78em;
+  color: var(--green);
+  margin-inline-end: 8px;
+}
+
+/* ───────────── پانویس‌های شماره‌دار ───────────── */
+.refs ol { font-size: var(--fs-tiny); line-height: 1.9; }
+.refs li { margin-bottom: 8px; }
+.refs .en { word-break: break-word; }
+
+@media print {
+  .cover { min-height: auto; background: none; border-bottom: 2px solid var(--green); padding: 0 0 20px; }
+  .cover-inner { margin: 0; padding: 0; max-width: none; }
+  .cover-art { display: none; }
+  .cover-title { font-size: 30pt; }
+  .epigraph { padding: 18px 0 0; font-size: 15pt; }
+  figure { page-break-inside: avoid; }
+}

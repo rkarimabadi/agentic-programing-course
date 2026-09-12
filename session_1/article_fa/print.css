@@ -1,0 +1,424 @@
+/* ═══════════════════════════════════════════════════════════════
+   Print stylesheet — US Letter pagination matching Day_1_v3.pdf
+   Content box: x 72→540pt (468pt wide), y 130→717pt (587pt tall)
+   Chapter openers on original pages: 6, 10, 15, 19, 26, 31, 35,
+   39, 43, 47, 49 — total 51 pages. Running header/footer is
+   stamped by the PDF post-processor (PyMuPDF).
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Full-bleed cover page (page 1) */
+@page :first {
+  size: Letter;
+  margin: 0;
+}
+
+/* Content pages */
+@page {
+  size: Letter;
+  margin: 130pt 72pt 75pt 72pt;
+}
+
+* { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+html, body {
+  background: #ffffff;
+}
+
+body {
+  font-family: "Vazirmatn", "Segoe UI", Tahoma, Arial, sans-serif;
+  font-size: 11pt;
+  line-height: 1.9;
+  color: #202124;
+}
+
+/* ── Hide screen-only chrome ── */
+.running-header,
+.toc-art,
+.page-footer {
+  display: none !important;
+}
+
+/* Cover art: original renders 000004 at 374×283pt bottom of page 1 */
+.cover-art {
+  display: block !important;
+  position: absolute;
+  inset-inline-start: auto;
+  inset-inline-end: 72pt;
+  bottom: 48pt;
+  width: 374pt;
+  height: auto;
+  opacity: 1;
+  pointer-events: none;
+}
+/* Acknowledgements art: modest size on the left of page 2 */
+.ack-art {
+  display: block !important;
+  width: 280pt;
+  height: auto;
+  border-radius: 4pt;
+  margin-top: 26pt;
+}
+
+/* ── Cover: exactly one page ── */
+.cover {
+  position: relative;
+  width: 612pt;
+  height: 792pt;
+  min-height: 792pt;
+  break-after: page;
+  page-break-after: always;
+  background: #f8f8f9;
+  display: block;
+  overflow: hidden;
+}
+.cover-inner {
+  position: static;
+  max-width: none;
+  margin: 0;
+  padding: 130pt 72pt 0;
+}
+.cover-title {
+  font-size: 56pt;
+  font-weight: 900;
+  line-height: 1.15;
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+.cover-subtitle {
+  margin: 34pt 0 0;
+  font-size: 24pt;
+  font-weight: 700;
+  line-height: 1.5;
+  color: #202124;
+}
+.cover-authors {
+  margin: 40pt 0 0;
+  font-size: 18pt;
+  font-weight: 700;
+  color: #80868b;
+}
+
+/* ── Acknowledgements: page 2 ── */
+.ack {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  display: block;
+  break-before: page;
+  page-break-before: always;
+  break-after: page;
+  page-break-after: always;
+}
+.ack-text { display: block; }
+.ack h2 {
+  font-size: 18pt;
+  font-weight: 700;
+  margin: 0 0 22pt;
+}
+.ack-art { float: inline-end; margin-inline-start: 22pt; margin-top: 0; }
+.ack-label {
+  font-size: 12pt;
+  font-weight: 700;
+  color: #80868b;
+  margin: 18pt 0 4pt;
+}
+.ack-text p {
+  margin: 3pt 0;
+  font-size: 11pt;
+}
+
+/* ── TOC: pages 3–5 (15 items per page, matching original) ── */
+.toc {
+  position: static;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  break-before: page;
+  page-break-before: always;
+}
+.toc-title {
+  font-size: 18pt;
+  font-weight: 700;
+  color: #202124;
+  margin: 0 0 26pt;
+}
+.toc-item {
+  display: block;
+  padding: 5pt 0;
+  font-size: 11pt;
+  color: #202124;
+  border-bottom: none;
+}
+.toc-item .toc-page {
+  color: #5f6368;
+}
+/* force exactly 15 items per page: item 16 starts page 4, item 31 starts page 5 */
+.toc-item:nth-of-type(16),
+.toc-item:nth-of-type(31) {
+  break-before: page;
+  page-break-before: always;
+}
+.toc-item.lvl2 { padding-inline-start: 0; }
+.toc-item.lvl3 { padding-inline-start: 0; }
+
+/* ── Main content ── */
+.content {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
+
+.part {
+  padding: 0;
+  border-top: none;
+  scroll-margin-top: 0;
+}
+
+/* Chapter openers start on fresh pages (original pages 6,10,15,19,26,31,35,39,43,47,49).
+   The break goes on the SECTION so the pull-quote stays with the مقدمه opener. */
+section.part:has(> h2.chapter-title) {
+  break-before: page;
+  page-break-before: always;
+}
+h2.chapter-title {
+  font-size: 24pt;
+  font-weight: 700;
+  line-height: 1.3;
+  margin: 0 0 28pt;
+  letter-spacing: -0.3px;
+}
+h3.section-title {
+  break-after: avoid;
+  page-break-after: avoid;
+  font-size: 16pt;
+  font-weight: 700;
+  line-height: 1.35;
+  margin: 30pt 0 12pt;
+}
+h4.sub-title {
+  break-after: avoid;
+  page-break-after: avoid;
+  font-size: 14pt;
+  font-weight: 700;
+  line-height: 1.35;
+  margin: 24pt 0 10pt;
+}
+
+p {
+  margin: 0 0 14pt;
+  orphans: 3;
+  widows: 3;
+}
+
+/* ── Pull quote (page 6 opener): 28pt gray with green bar ── */
+.pull-quote {
+  margin: 0 0 30pt;
+  padding: 4pt 0 4pt 0;
+  padding-inline-start: 22pt;
+  border-inline-start: 5pt solid #00a250;
+  font-size: 28pt;
+  font-weight: 300;
+  line-height: 1.5;
+  color: #80868b;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+/* ── Figures: full content width (468pt), never split ── */
+.figure {
+  margin: 30pt 0;
+  text-align: center;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+.figure img {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  border: 0.5pt solid #dadce0;
+  border-radius: 0;
+  background: #ffffff;
+}
+.figure figcaption {
+  margin-top: 8pt;
+  font-size: 9pt;
+  font-weight: 500;
+  color: #202124;
+}
+.figure-equation img {
+  max-width: 307pt;
+  width: 307pt;
+  border: none;
+}
+.table-figure { overflow: visible; }
+.table-figure table { min-width: 0; }
+
+/* ── Spectrum table (page 12–13): 9pt cells like original ── */
+.spectrum-table {
+  font-size: 9pt;
+  line-height: 1.45;
+  text-align: right;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+.spectrum-table thead th {
+  background: #f1f3f4;
+  font-weight: 700;
+  padding: 7pt 8pt;
+  border: 0.5pt solid #cfd3d5;
+}
+.spectrum-table tbody th {
+  background: #f8f8f9;
+  font-weight: 700;
+  padding: 7pt 8pt;
+  border: 0.5pt solid #cfd3d5;
+  white-space: normal;
+}
+.spectrum-table tbody td {
+  padding: 7pt 8pt;
+  border: 0.5pt solid #cfd3d5;
+}
+.spectrum-table tbody tr:nth-child(even) td { background: #fafbfc; }
+.spectrum-table tbody tr:hover td { background: #fafbfc; }
+
+/* ── Callout: light blue, icon small ── */
+.callout {
+  display: flex;
+  gap: 10pt;
+  align-items: flex-start;
+  margin: 30pt 0;
+  padding: 14pt 16pt;
+  background: #e9f6fd;
+  border-radius: 4pt;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+.callout-icon {
+  width: 18pt;
+  height: 18pt;
+  margin-top: 2pt;
+  border-radius: 2pt;
+}
+.callout-title {
+  font-weight: 700;
+  margin: 0 0 4pt;
+}
+.callout p { font-size: 11pt; margin-bottom: 6pt; }
+.callout p:last-child { margin-bottom: 0; }
+
+/* ── Code box: gray bg, 9pt monospace ── */
+.code-box {
+  margin: 30pt 0;
+  background: #f0f3f4;
+  border: 0.5pt solid #dadce0;
+  border-radius: 0;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+.code-box pre {
+  margin: 0;
+  padding: 12pt 16pt;
+  direction: ltr;
+  text-align: left;
+}
+.code-box code {
+  font-family: "Roboto Mono", "Cascadia Mono", "Consolas", monospace;
+  font-size: 9pt;
+  line-height: 1.7;
+  color: #202124;
+  white-space: pre;
+}
+.code-box .c-comment { color: #b80672; }
+.code-box .c-cmd { color: #202124; }
+.code-box figcaption {
+  padding: 8pt 16pt 10pt;
+  border-top: 0.5pt solid #dadce0;
+  font-size: 9pt;
+  font-weight: 500;
+  text-align: right;
+  background: #ffffff;
+}
+
+/* ── Inline code & footnotes ── */
+.inline-code {
+  font-family: "Roboto Mono", "Cascadia Mono", "Consolas", monospace;
+  font-size: 0.85em;
+  color: #188038;
+  background: #f1f3f4;
+  border-radius: 2pt;
+  padding: 0 4pt;
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+.fn {
+  font-size: 0.68em;
+  vertical-align: super;
+  color: #1967d2;
+  line-height: 0;
+}
+
+/* ── Lists ── */
+ul.plain-list, ul.agent-parts, ul.harness-list,
+ol.numbered-list, .harness-steps {
+  margin: 0 0 14pt;
+  padding-inline-start: 22pt;
+}
+ul.plain-list li, ul.agent-parts li, ul.harness-list li,
+ol.numbered-list li { margin-bottom: 8pt; }
+.harness-steps > li { margin-bottom: 18pt; }
+.harness-steps .sub-title { margin-top: 0; }
+
+/* ── Endnotes (original: 9pt, 3 pages 49-51) ── */
+.endnote-list {
+  padding-inline-start: 22pt;
+  font-size: 9.5pt;
+  color: #3c4043;
+}
+.endnote-list li { margin-bottom: 9pt; line-height: 1.6; }
+
+/* ── Avoid awkward breaks anywhere else ── */
+section.part {
+  break-inside: auto;
+}
+
+/* ── Chapter-specific tuning to match original page allocation ──
+   These tweaks exist ONLY to reproduce the original PDF's page count
+   (51 pages; openers on 6,10,15,19,26,31,35,39,43,47,49). They are
+   verified by print_pipeline.py before stamping — if you change
+   content or these values, re-run the pipeline which fails loudly if
+   pagination drifts. Do not "clean up" these without re-verifying. */
+
+/* Shift (تغییر) must fit 5 pages (10-14), Practice 4 pages (35-38):
+   compact their spacing slightly. Endnotes expanded above. */
+#tagheer p,
+#practice p {
+  margin-bottom: 10pt;
+}
+#tagheer h3.section-title,
+#practice h3.section-title {
+  margin-top: 20pt;
+}
+#tagheer .figure,
+#practice .figure {
+  margin: 16pt 0;
+}
+#tagheer .figure figcaption,
+#practice .figure figcaption {
+  margin-top: 6pt;
+}
+#tagheer ul.agent-parts li,
+#tagheer ul.plain-list li,
+#practice ul.plain-list li {
+  margin-bottom: 5pt;
+}
+/* compact the spectrum table inside Shift */
+#tagheer .spectrum-table {
+  font-size: 8.5pt;
+}
+#tagheer .spectrum-table th,
+#tagheer .spectrum-table td {
+  padding: 5pt 6pt;
+}
+#tagheer .spectrum-table {
+  margin: 12pt 0;
+}

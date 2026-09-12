@@ -1,0 +1,327 @@
+/* ═══════════════════════════════════════════════════════════════
+   استایل اسلایدهای فارسی — نسبت ۱۶:۹، راست‌به‌چپ، قابل چاپ
+   ═══════════════════════════════════════════════════════════════ */
+
+:root {
+  --text: #1f2124;
+  --text-soft: #484d52;
+  --gray: #7a8087;
+  --green: #00a250;
+  --green-dark: #157f42;
+  --green-soft: #eaf7f0;
+  --blue: #1967d2;
+  --blue-soft: #e9f2fd;
+  --amber: #b06000;
+  --amber-soft: #fdf3e3;
+  --pink: #b80672;
+  --pink-soft: #fceaf3;
+  --bg-soft: #f7f8f9;
+  --border: #dfe3e6;
+  --mono: "Roboto Mono", "Cascadia Mono", Consolas, monospace;
+
+  --slide-w: 1280px;
+  --slide-h: 720px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: #2b2f33;
+  color: var(--text);
+  font-family: "Vazirmatn", "Segoe UI", Tahoma, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.deck {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 26px;
+  padding: 26px 16px 90px;
+}
+
+.slide {
+  position: relative;
+  width: var(--slide-w);
+  height: var(--slide-h);
+  max-width: 100%;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 10px 34px rgba(0, 0, 0, 0.28);
+  padding: 64px 76px 76px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transform-origin: top center;
+}
+
+.fitbox {
+  display: flex;
+  flex-direction: column;
+  flex: none;
+  width: 100%;
+}
+
+/* شمارهٔ اسلاید */
+.slide::after {
+  content: attr(data-n);
+  position: absolute;
+  bottom: 26px;
+  inset-inline-start: 40px;
+  font-family: var(--mono);
+  font-size: 14px;
+  color: #b6bcc2;
+  direction: ltr;
+}
+/* نوار رنگی بالای اسلاید */
+.slide::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  inset-inline-start: 0;
+  width: 100%;
+  height: 6px;
+  background: linear-gradient(90deg, var(--green), #4dc98a);
+}
+
+.slide h2 {
+  font-size: 42px;
+  font-weight: 900;
+  line-height: 1.45;
+  margin: 0 0 10px;
+  letter-spacing: -0.5px;
+}
+.slide h3 {
+  font-size: 27px;
+  font-weight: 700;
+  margin: 0 0 20px;
+  color: var(--green-dark);
+}
+.slide .lead {
+  font-size: 24px;
+  line-height: 1.75;
+  color: var(--text-soft);
+  margin: 0 0 22px;
+  font-weight: 300;
+}
+.slide p { font-size: 21px; line-height: 1.8; margin: 0 0 16px; }
+
+.slide ul, .slide ol {
+  font-size: 22px;
+  line-height: 1.85;
+  margin: 0 0 18px;
+  padding-inline-start: 30px;
+}
+.slide li { margin-bottom: 12px; }
+.slide li::marker { color: var(--green); }
+.slide li small { display: block; font-size: 17px; color: var(--gray); line-height: 1.6; margin-top: 2px; }
+
+.slide .kicker {
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: var(--green-dark);
+  background: var(--green-soft);
+  border-radius: 999px;
+  padding: 5px 16px;
+  align-self: flex-start;
+  margin-bottom: 18px;
+}
+
+.slide code {
+  font-family: var(--mono);
+  font-size: 0.82em;
+  background: #f2f4f5;
+  border: 1px solid #e4e8ea;
+  border-radius: 6px;
+  padding: 1px 7px;
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+.slide pre {
+  direction: ltr;
+  text-align: left;
+  background: #1f2327;
+  color: #e6eaee;
+  border-radius: 12px;
+  padding: 20px 24px;
+  font-family: var(--mono);
+  font-size: 17px;
+  line-height: 1.8;
+  margin: 0 0 16px;
+  overflow: auto;
+}
+.slide pre code { background: none; border: none; padding: 0; color: inherit; font-size: inherit; }
+
+.en { font-family: var(--mono); font-size: 0.86em; direction: ltr; unicode-bidi: isolate; color: var(--text-soft); }
+
+/* اسلاید عنوان */
+.slide.title { background: var(--bg-soft); justify-content: center; }
+.slide.title h1 {
+  font-size: 62px;
+  font-weight: 900;
+  line-height: 1.35;
+  margin: 0;
+  letter-spacing: -1px;
+}
+.slide.title .sub { font-size: 28px; color: var(--gray); font-weight: 300; margin: 20px 0 0; line-height: 1.6; }
+.slide.title .meta { font-size: 19px; color: var(--text-soft); margin: 40px 0 0; font-weight: 600; }
+
+/* اسلاید بخش */
+.slide.section { background: #12161a; color: #fff; justify-content: center; }
+.slide.section::before { background: var(--green); }
+.slide.section::after { color: #5b636a; }
+.slide.section h2 { color: #fff; font-size: 52px; margin: 0; }
+.slide.section .lead { color: #9aa3ab; font-size: 25px; margin-top: 16px; }
+.slide.section .kicker { background: rgba(0, 162, 80, 0.18); color: #5fd79b; }
+
+/* اسلاید نقل‌قول */
+.slide.quote { background: var(--bg-soft); justify-content: center; }
+.slide.quote blockquote {
+  margin: 0;
+  font-size: 38px;
+  font-weight: 300;
+  line-height: 1.65;
+  border-inline-start: 6px solid var(--green);
+  padding-inline-start: 30px;
+}
+.slide.quote cite { display: block; margin-top: 26px; font-size: 20px; color: var(--gray); font-style: normal; }
+
+/* شبکه و کارت */
+.grid { display: grid; gap: 18px; }
+.grid.c2 { grid-template-columns: 1fr 1fr; }
+.grid.c3 { grid-template-columns: repeat(3, 1fr); }
+.grid.c4 { grid-template-columns: repeat(4, 1fr); }
+
+.tile {
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 20px 22px;
+  background: #fff;
+}
+.tile h4 { margin: 0 0 8px; font-size: 21px; font-weight: 700; }
+.tile p { margin: 0; font-size: 17px; line-height: 1.7; color: var(--text-soft); }
+.tile .num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--green-soft);
+  color: var(--green-dark);
+  font-weight: 800;
+  font-size: 18px;
+  margin-bottom: 10px;
+  font-family: var(--mono);
+}
+.tile.g { background: var(--green-soft); border-color: #bfe6d1; }
+.tile.b { background: var(--blue-soft); border-color: #c9ddf8; }
+.tile.a { background: var(--amber-soft); border-color: #f0d9b4; }
+.tile.p { background: var(--pink-soft); border-color: #f3c8de; }
+
+/* عدد بزرگ */
+.stat { text-align: center; }
+.stat .big { font-size: 64px; font-weight: 900; color: var(--green-dark); line-height: 1.2; font-family: var(--mono); direction: ltr; }
+.stat p { font-size: 18px; color: var(--text-soft); margin: 6px 0 0; }
+
+/* جدول اسلاید */
+.slide table { width: 100%; border-collapse: collapse; font-size: 17px; line-height: 1.65; }
+.slide th, .slide td { border: 1px solid var(--border); padding: 10px 12px; text-align: start; vertical-align: top; }
+.slide thead th { background: #f1f3f4; font-weight: 800; font-size: 16px; }
+
+/* کادر تأکید */
+.callout {
+  border-radius: 14px;
+  padding: 18px 22px;
+  font-size: 20px;
+  line-height: 1.75;
+  background: var(--green-soft);
+  border: 1px solid #bfe6d1;
+}
+.callout.b { background: var(--blue-soft); border-color: #c9ddf8; }
+.callout.a { background: var(--amber-soft); border-color: #f0d9b4; }
+.callout b { color: var(--green-dark); }
+.callout.b b { color: var(--blue); }
+.callout.a b { color: var(--amber); }
+
+/* فلش جریان */
+.flow { display: flex; align-items: stretch; gap: 12px; }
+.flow .step {
+  flex: 1;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+  background: #fff;
+  font-size: 17px;
+  line-height: 1.6;
+}
+.flow .step b { display: block; font-size: 19px; margin-bottom: 4px; }
+.flow .arrow { align-self: center; color: var(--green); font-size: 26px; font-weight: 700; }
+
+/* نوار پیمایش */
+.navbar {
+  position: fixed;
+  bottom: 0;
+  inset-inline: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  padding: 10px;
+  background: rgba(24, 27, 30, 0.92);
+  color: #c9ced3;
+  font-size: 14px;
+  backdrop-filter: blur(6px);
+  z-index: 100;
+}
+.navbar button {
+  font-family: inherit;
+  font-size: 14px;
+  background: #3a4046;
+  color: #e9edf0;
+  border: none;
+  border-radius: 8px;
+  padding: 6px 14px;
+  cursor: pointer;
+}
+.navbar button:hover { background: #4a5158; }
+.navbar .counter { font-family: var(--mono); direction: ltr; }
+
+/* حالت نمایش تک‌اسلاید */
+body.presenting { background: #12161a; overflow: hidden; }
+body.presenting .deck { padding: 0; gap: 0; height: 100vh; justify-content: center; }
+body.presenting .slide { display: none; border-radius: 0; box-shadow: none; }
+body.presenting .slide.current { display: flex; }
+
+@media (max-width: 1340px) {
+  .slide { zoom: 0.78; }
+}
+@media (max-width: 1024px) {
+  .slide { zoom: 0.6; }
+}
+
+/* چاپ: هر اسلاید یک صفحهٔ افقی */
+@media print {
+  @page { size: 297mm 167mm; margin: 0; }
+  body { background: #fff; }
+  .navbar { display: none; }
+  .deck { padding: 0; gap: 0; display: block; }
+  .slide {
+    width: 297mm;
+    height: 167mm;
+    max-width: none;
+    border-radius: 0;
+    box-shadow: none;
+    zoom: 1;
+    padding: 48px 60px 58px;
+    page-break-after: always;
+    display: flex !important;
+    transform: scale(0.86);
+    transform-origin: top right;
+  }
+  .slide h2 { font-size: 38px; }
+  .slide.title h1 { font-size: 54px; }
+}

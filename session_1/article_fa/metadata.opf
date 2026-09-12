@@ -1,0 +1,16 @@
+<?xml version="1.0"  encoding="UTF-8"?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:creator opf:role="aut" opf:file-as="Unknown">ناشناخته</dc:creator>
+<dc:identifier opf:scheme="calibre" id="calibre_id">dfb6a1d3-d854-455e-ab45-1363579a3098</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">68cd2712-ad33-4930-9f8e-6f8e657a2fce</dc:identifier>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">کالیبر (۹.۱۰.۰) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2026-06-18T16:19:32+00:00</dc:date>
+        <dc:title>روز اول نسخه ۳ [Persian]</dc:title>
+<dc:subject>Translated by Ebook Translator: https://translator.bookfere.com</dc:subject>
+<dc:language>fa</dc:language>
+</metadata>
+    <guide>
+        <reference type="cover" title="Cover" href="cover.jpg"/>
+    </guide>
+</package>
