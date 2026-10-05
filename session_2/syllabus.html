@@ -81,7 +81,7 @@
     <tr><td>۱</td><td>مسئلهٔ <span class="en">N×M</span> را با عدد توضیح دهد و نشان دهد <span class="en">MCP</span> چگونه پیچیدگی را از ضربی به جمعی تبدیل می‌کند.</td><td>فهم و تحلیل</td></tr>
     <tr><td>۲</td><td>سه گام ورود یک سرور <span class="en">MCP</span> (کشف، پیکربندی، اتصال) را روی یک عامل <span class="gl">(agent)</span> واقعی اجرا کند.</td><td>کاربرد</td></tr>
     <tr><td>۳</td><td>تفاوت حامل‌های <span class="gl">(Transport)</span> <span class="en">stdio</span> و <span class="en">SSE</span> را بگوید و برای یک سناریو حامل درست را انتخاب کند.</td><td>تحلیل</td></tr>
-    <tr><td>۴</td><td>هنگام خطای عامل، به‌جای دست‌کاری کورکورانهٔ دستور <span class="gl">(instruction)</span> سامانه، لایهٔ انتقال را با <span class="en">MCP Inspector</span> دیباگ <span class="gl">(debug)</span> کند.</td><td>کاربرد</td></tr>
+    <tr><td>۴</td><td>هنگام خطای عامل، به‌جای دست‌کاری کورکورانهٔ سیستم پرامپت، لایهٔ انتقال را با <span class="en">MCP Inspector</span> دیباگ <span class="gl">(debug)</span> کند.</td><td>کاربرد</td></tr>
     <tr><td>۵</td><td>فهرست بایدها و نبایدهای مصرف <span class="en">MCP</span> را به‌کار ببندد، به‌ویژه در مورد اعتبارنامه‌ها <span class="gl">(credential)</span> و محیط تولید.</td><td>ارزشیابی</td></tr>
     <tr><td>۶</td><td>سقف معماری «عامل یکپارچه <span class="gl">(Single-agent monolith)</span>» را تشخیص دهد و تخصص‌گرایی داخلی <span class="gl">(Internal specialization)</span> را به‌عنوان راه‌حل توضیح دهد.</td><td>تحلیل</td></tr>
     <tr><td>۷</td><td>معیار تصمیم «ابزار یا عامل؟» را بر پایهٔ کران‌دار یا بی‌کران <span class="gl">(Bounded)</span> بودن دامنه به‌کار ببندد.</td><td>ارزشیابی</td></tr>
@@ -124,7 +124,7 @@
     <tr><td>مسئلهٔ <span class="en">N×M</span></td><td><span class="en">NxM problem</span></td><td>اتصال <span class="en">N</span> مدل به <span class="en">M</span> ابزار به‌شکل سنتی، <span class="en">N×M</span> نقطهٔ یکپارچگی می‌خواهد؛ با پروتکل، <span class="en">N+M</span>.</td></tr>
     <tr><td>حامل</td><td><span class="en">Transport</span></td><td>مسیر <span class="gl">(trajectory)</span> انتقال پیام‌های <span class="en">JSON-RPC</span>: <span class="en">stdio</span> برای محلی و <span class="en">SSE</span> روی <span class="en">HTTP</span> برای راه دور.</td></tr>
     <tr><td>بازرس <span class="en">MCP</span></td><td><span class="en">MCP Inspector</span></td><td>ابزار توسعه‌دهنده برای پرس‌وجوی دستی سرور، دیدن اسکیمای ابزارها و بازرسی بسته‌های خام.</td></tr>
-    <tr><td>عامل یکپارچه</td><td><span class="en">Single-agent monolith</span></td><td>یک عامل با ده‌ها ابزار و یک دستور سامانهٔ غول‌آسا؛ سریع ساخته می‌شود، اما به سقف مقیاس می‌خورد.</td></tr>
+    <tr><td>عامل یکپارچه</td><td><span class="en">Single-agent monolith</span></td><td>یک عامل با ده‌ها ابزار و یک سیستم پرامپت غول‌آسا؛ سریع ساخته می‌شود، اما به سقف مقیاس می‌خورد.</td></tr>
     <tr><td>رقیق‌شدن توجه <span class="gl">(Attention dilution)</span></td><td><span class="en">Attention dilution</span></td><td>هرچه ابزارهای یک عامل بیشتر شود، فضای جست‌وجوی کنش بعدی بزرگ‌تر و تصمیم‌گیری بدتر می‌شود.</td></tr>
     <tr><td>تخصص‌گرایی داخلی</td><td><span class="en">Internal specialization</span></td><td>افراز منطقی یک عامل یکپارچه به زیرعامل‌های <span class="gl">(subagent)</span> هدفمند، بدون عبور از مرز شبکه.</td></tr>
     <tr><td>عامل‌به‌عامل <span class="gl">(A2A)</span></td><td><span class="en">A2A</span></td><td>پروتکل ارتباط میان عامل‌های مستقل؛ زبان مشترکی که از چارچوب، زبان برنامه‌نویسی و ساختار بار بی‌نیاز می‌کند.</td></tr>
@@ -223,7 +223,7 @@
 <h3>کارگاه ۲ — دیباگ یک فراخوان خراب (۱۰ دقیقه، گروه دونفره)</h3>
 <p>
 مدرس عمداً یک پیکربندی معیوب می‌دهد (نام ابزار نادرست یا پارامتر اجباری جاافتاده).
-گروه‌ها باید <strong>بدون تغییردادن دستور سامانه</strong> و فقط با بازرسی لایهٔ انتقال، علت را پیدا کنند.
+گروه‌ها باید <strong>بدون تغییردادن سیستم پرامپت</strong> و فقط با بازرسی لایهٔ انتقال، علت را پیدا کنند.
 هدف تمرین، جاانداختن این عادت است: «اول لوله‌ها را ببین، بعد درخواست را عوض کن.»
 </p>
 
@@ -249,7 +249,7 @@
   <thead><tr><th style="width:190px">مؤلفه</th><th style="width:70px">سهم</th><th>شرح و معیار نمره‌دهی</th></tr></thead>
   <tbody>
     <tr><td>گزارش اتصال <span class="en">MCP</span></td><td>۳۵٪</td><td>مستندسازی سه گام کشف، پیکربندی و اتصال برای یک سرور واقعی، همراه با تصویر فهرست ابزارها و شرح محدودسازی دسترسی.</td></tr>
-    <tr><td>گزارش دیباگ</td><td>۲۰٪</td><td>شرح یک خطای واقعی فراخوان ابزار <span class="gl">(tool call)</span> و نحوهٔ ریشه‌یابی آن از راه لایهٔ انتقال، نه حدس‌زدن روی دستور سامانه.</td></tr>
+    <tr><td>گزارش دیباگ</td><td>۲۰٪</td><td>شرح یک خطای واقعی فراخوان ابزار <span class="gl">(tool call)</span> و نحوهٔ ریشه‌یابی آن از راه لایهٔ انتقال، نه حدس‌زدن روی سیستم پرامپت.</td></tr>
     <tr><td>کارت عامل</td><td>۲۵٪</td><td>کارت عاملِ کامل و واقع‌بینانه برای یک متخصص فرضی؛ صراحت مرزها و سیاست داده امتیاز اصلی را دارد.</td></tr>
     <tr><td>تحلیل معماری</td><td>۲۰٪</td><td>یک صفحه: در پروژهٔ خودتان کجا عامل یکپارچه به سقف می‌خورد و کدام بخش‌ها را به زیرعامل تخصصی می‌شکنید و چرا.</td></tr>
   </tbody>
