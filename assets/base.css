@@ -137,7 +137,8 @@ h4 {
   margin: 26px 0 8px;
   color: var(--text-soft);
 }
-p { margin: 0 0 16px; }
+p { margin: 0 0 16px; text-align: justify; text-justify: inter-word; }
+li { text-align: justify; text-justify: inter-word; }
 a { color: var(--blue); }
 
 ul, ol { margin: 0 0 18px; padding-inline-start: 26px; }
